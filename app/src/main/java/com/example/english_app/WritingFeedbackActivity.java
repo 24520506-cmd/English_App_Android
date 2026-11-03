@@ -1,0 +1,2 @@
+package com.example.english_app;
+import android.os.Bundle;import android.widget.Toast;public class WritingFeedbackActivity extends LearningBaseActivity {@Override protected int layout(){return R.layout.activity_writing_feedback;}@Override public void onCreate(Bundle b){super.onCreate(b);findViewById(R.id.revise).setOnClickListener(v->go(WritingRevisionActivity.class));findViewById(R.id.history).setOnClickListener(v->Toast.makeText(this,"Lịch sử học chưa sẵn sàng",Toast.LENGTH_SHORT).show());}}

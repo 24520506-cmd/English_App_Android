@@ -1,0 +1,10 @@
+{
+  "name": "STAR JOURNEY — UI/UX REFINEMENT IMPORT",
+  "id": "star-journey-uiux-refinement-import-20261023",
+  "api": "1.0.0",
+  "main": "code.js",
+  "ui": "ui.html",
+  "editorType": [
+    "figma"
+  ]
+}

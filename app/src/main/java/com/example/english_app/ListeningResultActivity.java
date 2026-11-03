@@ -1,0 +1,2 @@
+package com.example.english_app;
+import android.os.Bundle;public class ListeningResultActivity extends LearningBaseActivity {@Override protected int layout(){return R.layout.activity_listening_result;}@Override public void onCreate(Bundle b){super.onCreate(b);findViewById(R.id.next).setOnClickListener(v->go(WritingActivity.class));findViewById(R.id.repeat).setOnClickListener(v->go(ListeningActivity.class));}}

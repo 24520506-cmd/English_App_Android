@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@drawable/app_night_bg">
+    <com.example.english_app.StarfieldView android:layout_width="match_parent" android:layout_height="match_parent" android:importantForAccessibility="no" />
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true" android:clipToPadding="false">
+        <LinearLayout android:id="@+id/pfContent" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:paddingStart="22dp" android:paddingEnd="22dp" android:paddingTop="24dp" android:paddingBottom="96dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="48dp" android:gravity="center_vertical" android:paddingStart="4dp" android:paddingEnd="16dp" android:background="?android:attr/selectableItemBackgroundBorderless" android:text="‹  Quay lại" android:textColor="@color/pf_mint" android:textSize="14sp" android:layout_marginTop="0dp" android:lineSpacingExtra="3dp" android:textStyle="bold" android:id="@+id/pfBack" />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Nhắc ôn tập" android:textColor="@color/pf_text" android:textSize="24sp" android:layout_marginTop="24dp" android:lineSpacingExtra="3dp" android:textStyle="bold" />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="THÔNG BÁO ÔN TẬP" android:textColor="@color/pf_gold" android:textSize="21sp" android:layout_marginTop="11dp" android:lineSpacingExtra="3dp" android:textStyle="bold" />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Màn cài đặt minh họa; thông báo chưa được kích hoạt." android:textColor="@color/pf_muted" android:textSize="13sp" android:layout_marginTop="7dp" android:lineSpacingExtra="3dp" />
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp" android:layout_marginTop="12dp" android:background="@drawable/pf_card_bg">
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Nhắc 19:00" android:textColor="@color/pf_text" android:textSize="15sp" android:layout_marginTop="0dp" android:lineSpacingExtra="3dp" android:textStyle="bold" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Các mốc ôn chưa hoàn thành trong ngày hiệu lực." android:textColor="@color/pf_muted" android:textSize="13sp" android:layout_marginTop="6dp" android:lineSpacingExtra="3dp" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp" android:layout_marginTop="12dp" android:background="@drawable/pf_card_bg">
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Nhắc 21:00" android:textColor="@color/pf_text" android:textSize="15sp" android:layout_marginTop="0dp" android:lineSpacingExtra="3dp" android:textStyle="bold" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Nhắc các mốc còn thiếu, hết hạn hôm nay." android:textColor="@color/pf_muted" android:textSize="13sp" android:layout_marginTop="6dp" android:lineSpacingExtra="3dp" />
+            </LinearLayout>
+            <CheckBox android:id="@+id/pfEnableNotify" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:text="Bật nhận thông báo ôn tập" android:textColor="@color/pf_text" android:textSize="15sp" android:buttonTint="@color/pf_mint" android:padding="4dp" />
+            <Button android:id="@+id/pfSaveNotify" android:layout_width="match_parent" android:layout_height="54dp" android:layout_marginTop="18dp" android:background="@drawable/pf_button_bg" android:backgroundTint="@null" android:text="Lưu →" android:textAllCaps="false" android:textColor="@color/pf_bg" android:textStyle="bold" android:textSize="15sp" />
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

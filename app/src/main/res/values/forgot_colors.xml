@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="forgot_bg">#151B36</color>
+    <color name="forgot_field">#222C4E</color>
+    <color name="forgot_border">#48577D</color>
+    <color name="forgot_mint">#79E4C8</color>
+    <color name="forgot_yellow">#F6CA59</color>
+    <color name="forgot_white">#F7F8FF</color>
+    <color name="forgot_secondary">#BFC9DF</color>
+</resources>

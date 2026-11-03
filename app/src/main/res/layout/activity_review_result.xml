@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@drawable/app_night_bg">
+    <com.example.english_app.StarfieldView android:layout_width="match_parent" android:layout_height="match_parent" />
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true" android:clipToPadding="false">
+        <LinearLayout android:id="@+id/contentColumn" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingStart="22dp" android:paddingEnd="22dp" android:paddingTop="24dp" android:paddingBottom="44dp" android:orientation="vertical">
+            <TextView android:id="@+id/backLink" android:layout_width="wrap_content" android:layout_height="48dp" android:background="?android:attr/selectableItemBackgroundBorderless" android:gravity="center_vertical" android:paddingStart="4dp" android:paddingEnd="16dp" android:text="← Quay lại" android:textSize="14sp" android:textColor="@color/rv_mint" android:textStyle="bold" />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Kết quả ôn" android:textSize="18sp" android:textColor="@color/rv_white" android:layout_marginTop="12dp" android:lineSpacingExtra="3dp" android:textStyle="bold" />
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:background="@drawable/rv_result_hero_bg" android:gravity="center_horizontal" android:orientation="vertical" android:padding="24dp">
+                <ImageView android:layout_width="48dp" android:layout_height="48dp" android:src="@drawable/rv_check_icon" android:importantForAccessibility="no" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:gravity="center" android:text="ÔN TẬP XONG" android:textSize="26sp" android:textColor="@color/rv_yellow" android:textStyle="bold" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:gravity="center" android:text="Bạn đã đi qua phần từ vựng, nghe và viết." android:textSize="14sp" android:textColor="@color/rv_white" />
+            </LinearLayout>
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Kết quả minh họa; điểm chưa được cộng." android:textSize="14sp" android:textColor="@color/rv_muted" android:layout_marginTop="16dp" />
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp" android:background="@drawable/rv_card_bg" android:layout_marginTop="12dp">
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="TỰ ĐỐI CHIẾU" android:textSize="15sp" android:textColor="@color/rv_white" android:layout_marginTop="0dp" android:lineSpacingExtra="3dp" android:textStyle="bold" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Đáp án và đánh giá chi tiết sẽ có khi dữ liệu bài ôn sẵn sàng." android:textSize="13sp" android:textColor="@color/rv_muted" android:layout_marginTop="6dp" android:lineSpacingExtra="3dp" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp" android:background="@drawable/rv_card_bg" android:layout_marginTop="12dp">
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="ÔN NGOÀI MỐC" android:textSize="15sp" android:textColor="@color/rv_white" android:layout_marginTop="0dp" android:lineSpacingExtra="3dp" android:textStyle="bold" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Lịch sử ôn chưa được lưu trong bản giao diện này." android:textSize="13sp" android:textColor="@color/rv_muted" android:layout_marginTop="6dp" android:lineSpacingExtra="3dp" />
+            </LinearLayout>
+            <Button android:id="@+id/backToReview" android:layout_width="match_parent" android:layout_height="54dp" android:layout_marginTop="18dp" android:text="Về ôn tập  →" android:textAllCaps="false" android:textSize="15sp" android:textStyle="bold" android:textColor="@color/rv_bg" android:background="@drawable/rv_action_bg" android:backgroundTint="@null" />
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

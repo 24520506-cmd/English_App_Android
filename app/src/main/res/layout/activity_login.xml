@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/loginScroll" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:fillViewport="true"
+    android:background="@drawable/app_night_bg" android:clipToPadding="false">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:paddingStart="20dp" android:paddingEnd="20dp"
+        android:paddingTop="22dp" android:paddingBottom="26dp" android:orientation="vertical">
+        <com.example.english_app.LoginHeroView android:id="@+id/heroCard"
+            android:layout_width="match_parent" android:layout_height="268dp"
+            android:importantForAccessibility="no"/>
+        <LinearLayout android:id="@+id/introGroup" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_marginTop="24dp" android:orientation="vertical">
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="HỌC MỖI NGÀY," android:textColor="@color/login_text" android:gravity="center"
+                android:textSize="25sp" android:textStyle="bold" />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="TIẾN BỘ MỖI NGÀY" android:textColor="@color/login_mint" android:gravity="center"
+                android:textSize="25sp" android:textStyle="bold" />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="Từ vựng theo chủ đề · Luyện nghe · Luyện viết"
+                android:layout_marginTop="8dp" android:textColor="@color/login_muted"
+                android:gravity="center" android:textSize="12sp"/>
+        </LinearLayout>
+        <LinearLayout android:id="@+id/formGroup" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_marginTop="22dp" android:orientation="vertical">
+            <TextView android:id="@+id/loginError" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:visibility="gone" android:textColor="#FFADB8" android:textSize="13sp" android:paddingBottom="8dp"
+                android:accessibilityLiveRegion="polite" />
+            <LinearLayout android:id="@+id/usernameGroup" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:orientation="vertical">
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="TÊN ĐĂNG NHẬP" android:textColor="@color/login_muted" android:textStyle="bold" android:textSize="11sp"/>
+                <EditText android:id="@+id/usernameInput" android:layout_width="match_parent" android:layout_height="52dp"
+                    android:layout_marginTop="7dp" android:background="@drawable/login_field_bg"
+                    android:paddingStart="15dp" android:paddingEnd="15dp" android:hint="Nhập tên đăng nhập"
+                    android:singleLine="true" android:inputType="textNoSuggestions" android:textSize="15sp"
+                    android:textColor="@color/login_text" android:textColorHint="@color/login_muted" />
+            </LinearLayout>
+            <LinearLayout android:id="@+id/passwordGroup" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginTop="14dp" android:orientation="vertical">
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="MẬT KHẨU" android:textColor="@color/login_muted"
+                    android:textStyle="bold" android:textSize="11sp"/>
+                <FrameLayout android:id="@+id/passwordField" android:layout_width="match_parent" android:layout_height="52dp"
+                    android:layout_marginTop="7dp" android:background="@drawable/login_field_bg">
+                    <EditText android:id="@+id/passwordInput" android:layout_width="match_parent" android:layout_height="match_parent"
+                        android:layout_marginEnd="64dp" android:background="@android:color/transparent"
+                        android:paddingStart="15dp" android:hint="Nhập mật khẩu" android:singleLine="true"
+                        android:inputType="textPassword" android:textSize="15sp" android:textColor="@color/login_text"
+                        android:textColorHint="@color/login_muted"/>
+                    <TextView android:id="@+id/togglePassword" android:layout_width="64dp"
+                        android:layout_height="match_parent" android:layout_gravity="end" android:gravity="center"
+                        android:text="Hiện" android:textColor="@color/login_mint" android:textSize="13sp"
+                        android:focusable="true" android:clickable="true" />
+                </FrameLayout>
+            </LinearLayout>
+            <Button android:id="@+id/loginButton" android:layout_width="match_parent" android:layout_height="52dp"
+                android:layout_marginTop="18dp" android:background="@drawable/login_button_bg"
+                android:backgroundTint="@null" android:text="ĐĂNG NHẬP" android:textAllCaps="false"
+                android:textColor="@color/login_dark_text" android:textSize="15sp" android:textStyle="bold"/>
+            <LinearLayout android:id="@+id/registerRow" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:gravity="center_vertical" android:orientation="horizontal" android:layout_marginTop="6dp">
+                <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="48dp"
+                    android:gravity="center_vertical" android:text="Chưa có tài khoản?" android:textColor="@color/login_muted"
+                    android:textSize="13sp"/>
+                <TextView android:id="@+id/createAccount" android:layout_width="wrap_content" android:layout_height="48dp"
+                    android:gravity="center_vertical" android:text="Tạo tài khoản" android:textColor="@color/login_mint"
+                    android:textSize="13sp" android:textStyle="bold" android:clickable="true" android:focusable="true"/>
+            </LinearLayout>
+            <TextView android:id="@+id/forgotPassword" android:layout_width="match_parent"
+                android:layout_height="44dp" android:gravity="center" android:text="Quên mật khẩu?"
+                android:textColor="@color/login_muted" android:textSize="13sp" android:textStyle="bold"
+                android:clickable="true" android:focusable="true"/>
+            <TextView android:id="@+id/termsText" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="16dp" android:gravity="center" android:lineSpacingExtra="3dp"
+                android:text="Tiếp tục nghĩa là bạn đồng ý với\nĐiều khoản dịch vụ &amp; Chính sách bảo mật"
+                android:textColor="@color/login_muted" android:textSize="11sp"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

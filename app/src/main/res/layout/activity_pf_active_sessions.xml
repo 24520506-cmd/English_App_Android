@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@drawable/app_night_bg">
+    <com.example.english_app.StarfieldView android:layout_width="match_parent" android:layout_height="match_parent" android:importantForAccessibility="no" />
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true" android:clipToPadding="false">
+        <LinearLayout android:id="@+id/pfContent" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:paddingStart="22dp" android:paddingEnd="22dp" android:paddingTop="24dp" android:paddingBottom="96dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="48dp" android:gravity="center_vertical" android:paddingStart="4dp" android:paddingEnd="16dp" android:background="?android:attr/selectableItemBackgroundBorderless" android:text="‹  Quay lại" android:textColor="@color/pf_mint" android:textSize="14sp" android:layout_marginTop="0dp" android:lineSpacingExtra="3dp" android:textStyle="bold" android:id="@+id/pfBack" />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Quản lý phiên" android:textColor="@color/pf_text" android:textSize="24sp" android:layout_marginTop="24dp" android:lineSpacingExtra="3dp" android:textStyle="bold" />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="CÁC PHIÊN ĐĂNG NHẬP" android:textColor="@color/pf_gold" android:textSize="21sp" android:layout_marginTop="11dp" android:lineSpacingExtra="3dp" android:textStyle="bold" />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Chỉ hiển thị phiên còn hiệu lực và hoạt động cuối." android:textColor="@color/pf_muted" android:textSize="13sp" android:layout_marginTop="7dp" android:lineSpacingExtra="3dp" />
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp" android:layout_marginTop="12dp" android:background="@drawable/pf_card_bg">
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Phiên hiện tại" android:textColor="@color/pf_text" android:textSize="15sp" android:layout_marginTop="0dp" android:lineSpacingExtra="3dp" android:textStyle="bold" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Thiết bị này · thời điểm đăng nhập, hoạt động cuối lấy từ API" android:textColor="@color/pf_muted" android:textSize="13sp" android:layout_marginTop="6dp" android:lineSpacingExtra="3dp" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp" android:layout_marginTop="12dp" android:background="@drawable/pf_card_bg">
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Phiên khác" android:textColor="@color/pf_text" android:textSize="15sp" android:layout_marginTop="0dp" android:lineSpacingExtra="3dp" android:textStyle="bold" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Mỗi lần đăng nhập là một phiên, có thể thu hồi riêng." android:textColor="@color/pf_muted" android:textSize="13sp" android:layout_marginTop="6dp" android:lineSpacingExtra="3dp" />
+            </LinearLayout>
+            <Button android:id="@+id/pfOpenRevoke" android:layout_width="match_parent" android:layout_height="54dp" android:layout_marginTop="18dp" android:background="@drawable/pf_outline_bg" android:text="Đăng xuất tất cả ›" android:textAllCaps="false" android:textColor="@color/pf_mint" android:textStyle="bold" android:textSize="15sp" />
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

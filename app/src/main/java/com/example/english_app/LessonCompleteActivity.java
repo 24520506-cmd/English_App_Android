@@ -1,0 +1,2 @@
+package com.example.english_app;
+import android.os.Bundle;public class LessonCompleteActivity extends LearningBaseActivity {@Override protected int layout(){return R.layout.activity_lesson_complete;}@Override public void onCreate(Bundle b){super.onCreate(b);findViewById(R.id.feedback).setOnClickListener(v->go(WritingFeedbackActivity.class));findViewById(R.id.finishStepTwo).setOnClickListener(v->finishStepTwo());}}

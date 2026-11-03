@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@drawable/app_night_bg">
+    <com.example.english_app.StarfieldView android:layout_width="match_parent" android:layout_height="match_parent" />
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true" android:clipToPadding="false">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:paddingStart="22dp" android:paddingEnd="22dp" android:paddingTop="24dp" android:paddingBottom="96dp" android:id="@+id/entranceColumn">
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Xếp hạng" android:textSize="24sp" android:textColor="@color/pr_white" android:layout_marginTop="0dp" android:lineSpacingExtra="3dp" android:textStyle="bold" />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="XẾP HẠNG" android:textSize="22sp" android:textColor="@color/pr_yellow" android:layout_marginTop="12dp" android:lineSpacingExtra="3dp" android:textStyle="bold" />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Điểm hoạt động học tập, không phải IELTS band" android:textSize="13sp" android:textColor="@color/pr_muted" android:layout_marginTop="7dp" android:lineSpacingExtra="3dp" />
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="16dp" android:background="@drawable/pr_card_bg" android:padding="5dp">
+                <Button android:id="@+id/rank0" android:layout_width="0dp" android:layout_height="48dp" android:layout_weight="1" android:text="Tuần" android:textAllCaps="false" android:textColor="@color/pr_white" android:textSize="14sp" />
+                <Button android:id="@+id/rank1" android:layout_width="0dp" android:layout_height="48dp" android:layout_weight="1" android:text="Tháng" android:textAllCaps="false" android:textColor="@color/pr_white" android:textSize="14sp" />
+                <Button android:id="@+id/rank2" android:layout_width="0dp" android:layout_height="48dp" android:layout_weight="1" android:text="Tất cả" android:textAllCaps="false" android:textColor="@color/pr_white" android:textSize="14sp" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp" android:layout_marginTop="10dp" android:background="@drawable/pr_card_bg">
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/rankingPeriodTitle" android:text="✦ Top 10 tuần này · Minh họa" android:textSize="15sp" android:textColor="@color/pr_white" android:layout_marginTop="0dp" android:lineSpacingExtra="3dp" android:textStyle="bold" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/rankingNote" android:text="Bảng xếp hạng mẫu; chưa có dữ liệu tài khoản." android:textSize="13sp" android:textColor="@color/pr_muted" android:layout_marginTop="6dp" android:lineSpacingExtra="3dp" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp" android:layout_marginTop="10dp" android:background="@drawable/pr_card_bg">
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="BẢNG VINH DANH MẪU" android:textSize="15sp" android:textColor="@color/pr_white" android:layout_marginTop="0dp" android:lineSpacingExtra="3dp" android:textStyle="bold" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="#2                         #1                         #3" android:textSize="13sp" android:textColor="@color/pr_muted" android:layout_marginTop="6dp" android:lineSpacingExtra="3dp" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp" android:layout_marginTop="10dp" android:background="@drawable/pr_card_bg">
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="#04 Người học A" android:textSize="15sp" android:textColor="@color/pr_white" android:layout_marginTop="0dp" android:lineSpacingExtra="3dp" android:textStyle="bold" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="510 điểm • nghe lần đầu 75% (tham khảo)" android:textSize="13sp" android:textColor="@color/pr_muted" android:layout_marginTop="6dp" android:lineSpacingExtra="3dp" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp" android:layout_marginTop="10dp" android:background="@drawable/pr_card_bg">
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="#05 Người học B" android:textSize="15sp" android:textColor="@color/pr_white" android:layout_marginTop="0dp" android:lineSpacingExtra="3dp" android:textStyle="bold" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="470 điểm • nghe lần đầu 66% (tham khảo)" android:textSize="13sp" android:textColor="@color/pr_muted" android:layout_marginTop="6dp" android:lineSpacingExtra="3dp" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp" android:layout_marginTop="10dp" android:background="@drawable/pr_card_bg">
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Hạng của bạn" android:textSize="15sp" android:textColor="@color/pr_white" android:layout_marginTop="0dp" android:lineSpacingExtra="3dp" android:textStyle="bold" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Hạng cá nhân sẽ xuất hiện khi có dữ liệu tài khoản." android:textSize="13sp" android:textColor="@color/pr_muted" android:layout_marginTop="6dp" android:lineSpacingExtra="3dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout android:id="@+id/bottomNav" android:layout_width="match_parent" android:layout_height="58dp" android:layout_gravity="bottom" android:orientation="horizontal" android:background="@drawable/pr_tab_bg" android:padding="5dp">
+        <Button android:id="@+id/nav0" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:text="Học" android:textAllCaps="false" android:textSize="11sp" android:textColor="@color/pr_white" android:backgroundTint="@color/pr_bg" />
+        <Button android:id="@+id/nav1" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:text="Ôn tập" android:textAllCaps="false" android:textSize="11sp" android:textColor="@color/pr_white" android:backgroundTint="@color/pr_bg" />
+        <Button android:id="@+id/nav2" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:text="Tiến độ" android:textAllCaps="false" android:textSize="11sp" android:textColor="@color/pr_white" android:backgroundTint="@color/pr_bg" />
+        <Button android:id="@+id/nav3" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:text="Xếp hạng" android:textAllCaps="false" android:textSize="11sp" android:textColor="@color/pr_white" android:backgroundTint="@color/pr_bg" />
+        <Button android:id="@+id/nav4" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:text="Hồ sơ" android:textAllCaps="false" android:textSize="11sp" android:textColor="@color/pr_white" android:backgroundTint="@color/pr_bg" />
+    </LinearLayout>
+</FrameLayout>

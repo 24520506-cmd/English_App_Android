@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@drawable/app_night_bg">
+    <com.example.english_app.StarfieldView android:layout_width="match_parent" android:layout_height="match_parent" />
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true" android:clipToPadding="false">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:paddingStart="22dp" android:paddingEnd="22dp" android:paddingTop="24dp" android:paddingBottom="96dp" android:id="@+id/entranceColumn">
+            <TextView android:id="@+id/backLink" android:layout_width="wrap_content" android:layout_height="48dp" android:background="?android:attr/selectableItemBackgroundBorderless" android:gravity="center_vertical" android:paddingStart="4dp" android:paddingEnd="16dp" android:text="← Quay lại" android:textSize="14sp" android:textColor="@color/pr_mint" android:textStyle="bold" />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Chi tiết lịch sử" android:textSize="18sp" android:textColor="@color/pr_white" android:layout_marginTop="12dp" android:lineSpacingExtra="3dp" android:textStyle="bold" />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/historyDetailStatus" android:text="CHỦ ĐỀ ĐANG HỌC" android:textSize="26sp" android:textColor="@color/pr_yellow" android:layout_marginTop="4dp" android:lineSpacingExtra="3dp" android:textStyle="bold" />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Tiến độ đã lưu trên thiết bị" android:textSize="13sp" android:textColor="@color/pr_muted" android:layout_marginTop="7dp" android:lineSpacingExtra="3dp" />
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp" android:layout_marginTop="10dp" android:background="@drawable/pr_card_bg">
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Từ mục tiêu" android:textSize="15sp" android:textColor="@color/pr_white" android:layout_marginTop="0dp" android:lineSpacingExtra="3dp" android:textStyle="bold" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="7 từ/cụm từ minh họa trong bài hiện tại" android:textSize="13sp" android:textColor="@color/pr_muted" android:layout_marginTop="6dp" android:lineSpacingExtra="3dp" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp" android:layout_marginTop="10dp" android:background="@drawable/pr_card_bg">
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Kết quả nghe" android:textSize="15sp" android:textColor="@color/pr_white" android:layout_marginTop="0dp" android:lineSpacingExtra="3dp" android:textStyle="bold" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Kết quả nghe chi tiết chưa được lưu." android:textSize="13sp" android:textColor="@color/pr_muted" android:layout_marginTop="6dp" android:lineSpacingExtra="3dp" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp" android:layout_marginTop="10dp" android:background="@drawable/pr_card_bg">
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Câu viết &amp; AI" android:textSize="15sp" android:textColor="@color/pr_white" android:layout_marginTop="0dp" android:lineSpacingExtra="3dp" android:textStyle="bold" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Phản hồi bài viết hiện là nội dung minh họa." android:textSize="13sp" android:textColor="@color/pr_muted" android:layout_marginTop="6dp" android:lineSpacingExtra="3dp" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp" android:layout_marginTop="10dp" android:background="@drawable/pr_card_bg">
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Lịch ôn" android:textSize="15sp" android:textColor="@color/pr_white" android:layout_marginTop="0dp" android:lineSpacingExtra="3dp" android:textStyle="bold" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Các mốc D+1 / D+3 / D+7 là lịch ôn minh họa." android:textSize="13sp" android:textColor="@color/pr_muted" android:layout_marginTop="6dp" android:lineSpacingExtra="3dp" />
+            </LinearLayout>
+            <Button android:id="@+id/openWriting" android:layout_width="match_parent" android:layout_height="52dp" android:layout_marginTop="12dp" android:background="@drawable/pr_button_bg" android:backgroundTint="@null" android:text="Xem phần bài viết →" android:textAllCaps="false" android:textStyle="bold" android:textColor="@color/pr_bg" android:textSize="15sp" />
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

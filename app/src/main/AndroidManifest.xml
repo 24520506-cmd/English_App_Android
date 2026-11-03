@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.TTS_SERVICE" />
+        </intent>
+    </queries>
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.English_App">
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ForgotPasswordActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".OnboardingBandActivity"
+            android:exported="false" />
+        <activity
+            android:name=".OnboardingTopicsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".OnboardingNameActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ReviewFlowActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ProgressRankingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileUiActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".StateScreensActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".LessonDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".VocabularyActivity"
+            android:exported="false" />
+        <activity android:name=".ListeningActivity" android:exported="false" />
+        <activity android:name=".ListeningResultActivity" android:exported="false" />
+        <activity android:name=".WritingActivity" android:exported="false" android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".LessonCompleteActivity" android:exported="false" />
+        <activity android:name=".WritingFeedbackActivity" android:exported="false" />
+        <activity android:name=".WritingRevisionActivity" android:exported="false" android:windowSoftInputMode="adjustResize" />
+    </application>
+
+</manifest>

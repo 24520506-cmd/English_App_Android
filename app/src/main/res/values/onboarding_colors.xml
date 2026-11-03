@@ -1,0 +1,10 @@
+<resources>
+ <color name="ob_background">#151A35</color>
+ <color name="ob_surface">#222C4E</color>
+ <color name="ob_surface_selected">#2C365D</color>
+ <color name="ob_outline">#45547D</color>
+ <color name="ob_mint">#79E5C4</color>
+ <color name="ob_yellow">#F6C754</color>
+ <color name="ob_white">#F8F9FF</color>
+ <color name="ob_muted">#BBC4DF</color>
+</resources>

@@ -1,0 +1,5596 @@
+{
+  "format": "vocab-figma-import-v1",
+  "meta": {
+    "title": "STAR JOURNEY · COMPLETE UI/UX · Standalone",
+    "source": "product-spec.md + existing 113-screen import package + live Figma screen/link inventory",
+    "visualReference": "10 user supplied mobile screenshots; visual style interpretation, not asset replication",
+    "sampleContent": "Illustrative only. Final lesson/audio/questions not supplied in product spec.",
+    "note": "113 editable screens imported to a new page. Visual hierarchy and prototype navigation are refined while preserving all existing screen IDs and states. API-driven behavior remains illustrative.",
+    "version": "4.3-ui-refinement",
+    "scope": "Mobile UI mockup; no production backend/auth, no video animations, no actual playback or scoring.",
+    "screenCount": 113,
+    "name": "STAR JOURNEY · Unified Welcome / Login",
+    "description": "Incremental refinement of the existing 113-screen mockup; original Figma pages remain intact."
+  },
+  "theme": {
+    "background": "#151832",
+    "surface": "#2B345D",
+    "surface2": "#364574",
+    "indigo": "#A9B4FF",
+    "violet": "#A9B4FF",
+    "yellow": "#F4C75D",
+    "mint": "#7EE6C2",
+    "text": "#F7F8FF",
+    "muted": "#CDD5EF",
+    "ink": "#20264B",
+    "radius": 22,
+    "font": "Inter",
+    "cardSurface": "#202747",
+    "cardOutline": "#45537D",
+    "elevatedSurface": "#2B345D",
+    "success": "#83E7B8",
+    "warning": "#F7CC69",
+    "error": "#FF929E",
+    "disabled": "#7D89AD"
+  },
+  "navigation": [
+    "Học",
+    "Ôn tập",
+    "Tiến độ",
+    "Xếp hạng",
+    "Hồ sơ"
+  ],
+  "screens": [
+    {
+      "id": "welcome",
+      "title": "Chào mừng · Đăng nhập",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "HỌC TIẾNG ANH THEO HÀNH TRÌNH",
+          "subtitle": "Học từ theo chủ đề · Nghe · Viết · Ôn tập",
+          "accent": "mint"
+        },
+        {
+          "type": "field",
+          "title": "Tên đăng nhập",
+          "hint": "Nhập tên tài khoản"
+        },
+        {
+          "type": "field",
+          "title": "Mật khẩu",
+          "hint": "••••••••"
+        },
+        {
+          "type": "button",
+          "title": "Đăng nhập",
+          "route": "home",
+          "accent": "mint"
+        },
+        {
+          "type": "button",
+          "title": "Tạo tài khoản",
+          "route": "register",
+          "accent": "indigo"
+        },
+        {
+          "type": "button",
+          "title": "Quên mật khẩu",
+          "route": "forgot_password",
+          "accent": "indigo",
+          "appearance": "ghost"
+        }
+      ],
+      "actions": [],
+      "group": "Learner",
+      "requirements": [
+        "D-02",
+        "D-03",
+        "D-04",
+        "D-09",
+        "USR-02"
+      ]
+    },
+    {
+      "id": "register",
+      "title": "Tạo tài khoản",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Tạo tài khoản mới",
+          "subtitle": "",
+          "accent": "yellow"
+        },
+        {
+          "type": "field",
+          "title": "Tên đăng nhập",
+          "hint": "Nhập tên tài khoản"
+        },
+        {
+          "type": "field",
+          "title": "Mật khẩu",
+          "hint": "Tạo mật khẩu"
+        },
+        {
+          "type": "field",
+          "title": "Xác nhận mật khẩu",
+          "hint": "Nhập lại mật khẩu"
+        },
+        {
+          "type": "card",
+          "title": "Liên hệ có thể thêm sau",
+          "body": "Bạn vẫn học bình thường khi chưa thêm hoặc xác thực Gmail/SĐT.",
+          "accent": "mint"
+        },
+        {
+          "type": "button",
+          "title": "Tạo tài khoản",
+          "route": "onboarding_band",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "group": "Learner",
+      "requirements": []
+    },
+    {
+      "id": "forgot_password",
+      "title": "Khôi phục mật khẩu",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Chọn kênh nhận mã",
+          "subtitle": "Chọn Gmail (email OTP) hoặc SĐT (Zalo OTP).",
+          "accent": "yellow"
+        },
+        {
+          "type": "field",
+          "title": "Kênh nhận mã",
+          "hint": "○ Gmail: email OTP   ○ SĐT: Zalo OTP"
+        },
+        {
+          "type": "field",
+          "title": "Tên đăng nhập / liên hệ",
+          "hint": "Nhập tài khoản hoặc liên hệ đã lưu"
+        },
+        {
+          "type": "button",
+          "title": "Gửi mã",
+          "route": "reset_sent",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "group": "Learner",
+      "requirements": []
+    },
+    {
+      "id": "onboarding_band",
+      "title": "Chọn mức nội dung",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Bạn muốn học mức nào?",
+          "subtitle": "Đây là mức bài học mong muốn, không phải band IELTS được đánh giá.",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Dưới 4.0",
+          "body": "Nền tảng từ vựng",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "card",
+          "title": "4.0 – 5.0",
+          "body": "Giao tiếp và tình huống thường gặp",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "card",
+          "title": "5.5 – 6.5",
+          "body": "Từ vựng và ngữ cảnh nâng cao",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "card",
+          "title": "7.0+",
+          "body": "Từ vựng học thuật và diễn đạt tinh tế",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "button",
+          "title": "Tiếp tục",
+          "route": "onboarding_topics",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "group": "Learner",
+      "requirements": []
+    },
+    {
+      "id": "onboarding_topics",
+      "title": "Chọn chủ đề ưu tiên",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Học điều bạn thích",
+          "subtitle": "Chọn ít nhất một chủ đề. Có thể thay đổi sau.",
+          "accent": "yellow"
+        },
+        {
+          "type": "chips",
+          "items": [
+            "Daily Life",
+            "Education",
+            "Technology",
+            "Environment",
+            "Finance",
+            "Travel",
+            "Health",
+            "Work"
+          ]
+        },
+        {
+          "type": "button",
+          "title": "Tiếp tục",
+          "route": "onboarding_name",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "group": "Learner",
+      "requirements": []
+    },
+    {
+      "id": "onboarding_name",
+      "title": "Tên hiển thị",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Bạn muốn được gọi là gì?",
+          "subtitle": "Tên công khai là tùy chọn và có thể hiển thị ở xếp hạng.",
+          "accent": "yellow"
+        },
+        {
+          "type": "field",
+          "title": "Tên hiển thị (không bắt buộc)",
+          "hint": "2–30 ký tự"
+        },
+        {
+          "type": "button",
+          "title": "Hoàn tất",
+          "route": "home",
+          "accent": "yellow"
+        },
+        {
+          "type": "button",
+          "title": "Bỏ qua",
+          "route": "home",
+          "accent": "yellow",
+          "appearance": "ghost"
+        }
+      ],
+      "actions": [],
+      "group": "Learner",
+      "requirements": []
+    },
+    {
+      "id": "home",
+      "title": "Học",
+      "tab": "Học",
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "stats",
+          "title": "HÀNH TRÌNH HÔM NAY",
+          "accent": "yellow"
+        },
+        {
+          "type": "button",
+          "title": "Tiếp tục học",
+          "accent": "mint",
+          "route": "lesson_detail"
+        },
+        {
+          "type": "card",
+          "title": "Mốc ôn hôm nay",
+          "accent": "mint",
+          "body": "Ôn đúng ngày D+1, D+3, D+7 để giữ kiến thức lâu hơn.",
+          "route": "review",
+          "tag": "ĐẾN HẠN"
+        },
+        {
+          "type": "section",
+          "title": "BẢN ĐỒ HỌC TẬP",
+          "accent": "indigo"
+        },
+        {
+          "type": "journey",
+          "title": "Personal Finance & Budgeting — Part 1",
+          "accent": "yellow",
+          "route": "lesson_detail",
+          "cta": "XEM BÀI HỌC"
+        },
+        {
+          "type": "journey",
+          "title": "Personal Finance & Budgeting — Part 2",
+          "accent": "violet",
+          "route": "topic_detail",
+          "cta": "XEM CHỦ ĐỀ"
+        },
+        {
+          "type": "button",
+          "title": "Khám phá tất cả chủ đề",
+          "accent": "yellow",
+          "route": "catalog"
+        }
+      ],
+      "actions": [],
+      "group": "Learner",
+      "requirements": []
+    },
+    {
+      "id": "catalog",
+      "title": "Khám phá chủ đề",
+      "tab": "Học",
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Kho bài học",
+          "subtitle": "Học theo chủ đề và mức nội dung đã chọn",
+          "accent": "yellow"
+        },
+        {
+          "type": "field",
+          "title": "Tìm chủ đề hoặc lesson",
+          "hint": "Tìm kiếm...",
+          "route": "catalog_search"
+        },
+        {
+          "type": "chips",
+          "items": [
+            "Dưới 4.0",
+            "4.0–5.0",
+            "5.5–6.5",
+            "7.0+"
+          ]
+        },
+        {
+          "type": "section",
+          "title": "Tất cả chủ đề"
+        },
+        {
+          "type": "card",
+          "title": "Personal Finance",
+          "body": "Bài học theo ngữ cảnh tài chính",
+          "accent": "yellow",
+          "tag": "",
+          "route": "topic_detail"
+        },
+        {
+          "type": "card",
+          "title": "Technology",
+          "body": "Công nghệ và tác động xã hội",
+          "accent": "indigo",
+          "tag": "",
+          "route": "topic_detail"
+        },
+        {
+          "type": "card",
+          "title": "Environment",
+          "body": "Môi trường và biến đổi khí hậu",
+          "accent": "mint",
+          "tag": "",
+          "route": "topic_detail"
+        }
+      ],
+      "actions": [],
+      "group": "Learner",
+      "requirements": []
+    },
+    {
+      "id": "topic_detail",
+      "title": "Chủ đề Finance",
+      "tab": "Học",
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "PERSONAL FINANCE",
+          "subtitle": "Từ vựng tài chính cá nhân",
+          "accent": "yellow"
+        },
+        {
+          "type": "chips",
+          "items": [
+            "Band 5.5–6.5",
+            "Đổi band"
+          ]
+        },
+        {
+          "type": "card",
+          "title": "Part 1 · Budgeting",
+          "body": "7 từ • Từ → Nghe → Viết",
+          "accent": "mint",
+          "tag": "ĐANG HỌC",
+          "route": "lesson_detail"
+        },
+        {
+          "type": "card",
+          "title": "Part 2 · Credit & Savings",
+          "body": "6 từ • Chưa bắt đầu",
+          "accent": "indigo",
+          "tag": "CHƯA HỌC",
+          "route": "lesson_detail"
+        }
+      ],
+      "actions": [],
+      "group": "Learner",
+      "requirements": []
+    },
+    {
+      "id": "lesson_detail",
+      "title": "Chi tiết bài học",
+      "tab": "Học",
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "banner",
+          "title": "Bài học theo chủ đề",
+          "accent": "yellow"
+        },
+        {
+          "type": "hero",
+          "title": "Personal Finance & Budgeting – Part 1",
+          "subtitle": "Band 5.5–6.5 • 7 từ/cụm từ",
+          "accent": "yellow"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Từ vựng",
+            "Nghe",
+            "Viết"
+          ]
+        },
+        {
+          "type": "card",
+          "title": "Mục tiêu",
+          "body": "Hiểu cách dùng từ trong ngữ cảnh tài chính và vận dụng vào nghe, viết.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "card",
+          "title": "Từ vựng mục tiêu",
+          "body": "Discretionary spending • Household budget • Financial literacy • Emergency fund • Expenditure…",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "button",
+          "title": "Bắt đầu bài học",
+          "route": "vocab_1",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "group": "Learner",
+      "requirements": []
+    },
+    {
+      "id": "vocab_1",
+      "title": "Học từ vựng",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "banner",
+          "title": "TỪ VỰNG TRONG NGỮ CẢNH",
+          "accent": "yellow"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Từ vựng",
+            "Nghe",
+            "Viết"
+          ]
+        },
+        {
+          "type": "vocab_progress",
+          "position": 1,
+          "total": 7
+        },
+        {
+          "type": "hero",
+          "title": "Discretionary spending",
+          "subtitle": "Chi tiêu tùy ý",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Phiên âm & phát âm",
+          "body": "/dɪˈskreʃəneri ˈspendɪŋ/   ▶ Phát audio",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "card",
+          "title": "Câu ví dụ",
+          "body": "I want to cut my discretionary spending this month.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "card",
+          "title": "Hội thoại ngắn",
+          "body": "A: How can we save more?\nB: Let’s review our monthly expenses.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "card",
+          "title": "Tình huống sử dụng",
+          "body": "Diễn đạt một kế hoạch chi tiêu thực tế trong cuộc sống.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "button",
+          "title": "Đã xem · Tiếp tục",
+          "route": "vocab_2",
+          "accent": "yellow"
+        },
+        {
+          "type": "button",
+          "title": "Xem toàn bộ ngữ cảnh",
+          "route": "vocab_situation",
+          "accent": "indigo",
+          "appearance": "ghost"
+        }
+      ],
+      "actions": [],
+      "group": "Learner",
+      "requirements": []
+    },
+    {
+      "id": "vocab_2",
+      "title": "Học từ vựng",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "steps",
+          "items": [
+            "Từ vựng",
+            "Nghe",
+            "Viết"
+          ]
+        },
+        {
+          "type": "vocab_progress",
+          "position": 2,
+          "total": 7
+        },
+        {
+          "type": "hero",
+          "title": "Household budget",
+          "subtitle": "Ngân sách hộ gia đình",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Phiên âm & phát âm",
+          "body": "/ˈhaʊshoʊld ˈbʌdʒɪt/   ▶ Phát audio",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "card",
+          "title": "Câu ví dụ",
+          "body": "We need to make a household budget.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "card",
+          "title": "Hội thoại ngắn",
+          "body": "A: How can we save more?\nB: Let’s review our monthly expenses.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "card",
+          "title": "Tình huống sử dụng",
+          "body": "Diễn đạt một kế hoạch chi tiêu thực tế trong cuộc sống.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "button",
+          "title": "Đã xem · Tiếp tục",
+          "route": "vocab_3",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "group": "Learner",
+      "requirements": []
+    },
+    {
+      "id": "vocab_3",
+      "title": "Học từ vựng",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "steps",
+          "items": [
+            "Từ vựng",
+            "Nghe",
+            "Viết"
+          ]
+        },
+        {
+          "type": "vocab_progress",
+          "position": 3,
+          "total": 7
+        },
+        {
+          "type": "hero",
+          "title": "Financial literacy",
+          "subtitle": "Kiến thức tài chính",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Phiên âm & phát âm",
+          "body": "/faɪˈnænʃəl ˈlɪtərəsi/   ▶ Phát audio",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "card",
+          "title": "Câu ví dụ",
+          "body": "Financial literacy helps people manage money.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "card",
+          "title": "Hội thoại ngắn",
+          "body": "A: How can we save more?\nB: Let’s review our monthly expenses.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "card",
+          "title": "Tình huống sử dụng",
+          "body": "Diễn đạt một kế hoạch chi tiêu thực tế trong cuộc sống.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "button",
+          "title": "Đã xem · Tiếp tục",
+          "route": "vocab_4",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "group": "Learner",
+      "requirements": []
+    },
+    {
+      "id": "vocab_4",
+      "title": "Học từ vựng",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "steps",
+          "items": [
+            "Từ vựng",
+            "Nghe",
+            "Viết"
+          ]
+        },
+        {
+          "type": "vocab_progress",
+          "position": 4,
+          "total": 7
+        },
+        {
+          "type": "hero",
+          "title": "To tighten one’s belt",
+          "subtitle": "Thắt chặt chi tiêu",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Phiên âm & phát âm",
+          "body": "/ˈtaɪtən wʌnz belt/   ▶ Phát audio",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "card",
+          "title": "Câu ví dụ",
+          "body": "We must tighten our belts this month.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "card",
+          "title": "Hội thoại ngắn",
+          "body": "A: How can we save more?\nB: Let’s review our monthly expenses.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "card",
+          "title": "Tình huống sử dụng",
+          "body": "Diễn đạt một kế hoạch chi tiêu thực tế trong cuộc sống.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "button",
+          "title": "Đã xem · Tiếp tục",
+          "route": "vocab_5",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "group": "Learner",
+      "requirements": []
+    },
+    {
+      "id": "vocab_5",
+      "title": "Học từ vựng",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "steps",
+          "items": [
+            "Từ vựng",
+            "Nghe",
+            "Viết"
+          ]
+        },
+        {
+          "type": "vocab_progress",
+          "position": 5,
+          "total": 7
+        },
+        {
+          "type": "hero",
+          "title": "Emergency fund",
+          "subtitle": "Quỹ khẩn cấp",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Phiên âm & phát âm",
+          "body": "/ɪˈmɜːrdʒənsi fʌnd/   ▶ Phát audio",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "card",
+          "title": "Câu ví dụ",
+          "body": "She has an emergency fund.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "card",
+          "title": "Hội thoại ngắn",
+          "body": "A: How can we save more?\nB: Let’s review our monthly expenses.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "card",
+          "title": "Tình huống sử dụng",
+          "body": "Diễn đạt một kế hoạch chi tiêu thực tế trong cuộc sống.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "button",
+          "title": "Đã xem · Tiếp tục",
+          "route": "vocab_6",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "group": "Learner",
+      "requirements": []
+    },
+    {
+      "id": "vocab_6",
+      "title": "Học từ vựng",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "steps",
+          "items": [
+            "Từ vựng",
+            "Nghe",
+            "Viết"
+          ]
+        },
+        {
+          "type": "vocab_progress",
+          "position": 6,
+          "total": 7
+        },
+        {
+          "type": "hero",
+          "title": "Expenditure",
+          "subtitle": "Khoản chi tiêu",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Phiên âm & phát âm",
+          "body": "/ɪkˈspendɪtʃər/   ▶ Phát audio",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "card",
+          "title": "Câu ví dụ",
+          "body": "They reduced their monthly expenditure.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "card",
+          "title": "Hội thoại ngắn",
+          "body": "A: How can we save more?\nB: Let’s review our monthly expenses.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "card",
+          "title": "Tình huống sử dụng",
+          "body": "Diễn đạt một kế hoạch chi tiêu thực tế trong cuộc sống.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "button",
+          "title": "Đã xem · Tiếp tục",
+          "route": "vocab_7",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "group": "Learner",
+      "requirements": []
+    },
+    {
+      "id": "vocab_7",
+      "title": "Học từ vựng",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "steps",
+          "items": [
+            "Từ vựng",
+            "Nghe",
+            "Viết"
+          ]
+        },
+        {
+          "type": "vocab_progress",
+          "position": 7,
+          "total": 7
+        },
+        {
+          "type": "hero",
+          "title": "Living paycheck to paycheck",
+          "subtitle": "Sống phụ thuộc vào từng kỳ lương",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Phiên âm & phát âm",
+          "body": "/ˈlɪvɪŋ ˈpeɪtʃek tə ˈpeɪtʃek/   ▶ Phát audio",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "card",
+          "title": "Câu ví dụ",
+          "body": "He is living paycheck to paycheck.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "card",
+          "title": "Hội thoại ngắn",
+          "body": "A: How can we save more?\nB: Let’s review our monthly expenses.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "card",
+          "title": "Tình huống sử dụng",
+          "body": "Diễn đạt một kế hoạch chi tiêu thực tế trong cuộc sống.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "button",
+          "title": "Đã xem · Tiếp tục",
+          "route": "listening",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "group": "Learner",
+      "requirements": []
+    },
+    {
+      "id": "listening",
+      "title": "Luyện nghe",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "banner",
+          "title": "BƯỚC 2 / 3 — LUYỆN NGHE",
+          "accent": "mint"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Từ vựng",
+            "Nghe",
+            "Viết"
+          ]
+        },
+        {
+          "type": "hero",
+          "title": "LISTENING PRACTICE",
+          "subtitle": "Nghe đoạn hội thoại có chứa các từ đã học.",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Trình phát audio",
+          "body": "▶ Phát / Tạm dừng / Nghe lại\nCần phát hết ít nhất một lần trước khi nộp.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "section",
+          "title": "Câu hỏi nghe hiểu"
+        },
+        {
+          "type": "card",
+          "title": "Câu 1",
+          "body": "What are the speakers discussing?\n○ Monthly expenses\n○ Holiday plans\n○ School exams",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "section",
+          "title": "Điền từ còn thiếu"
+        },
+        {
+          "type": "field",
+          "title": "Câu 2 · Complete the sentence",
+          "hint": "They need an ______ fund."
+        },
+        {
+          "type": "card",
+          "title": "Lưu ý",
+          "body": "Chỉ xem transcript, đáp án và giải thích sau khi nộp.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "button",
+          "title": "Nộp bài nghe",
+          "route": "listening_result",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "group": "Learner",
+      "requirements": []
+    },
+    {
+      "id": "listening_result",
+      "title": "Kết quả nghe",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "HOÀN THÀNH PHẦN NGHE",
+          "subtitle": "Kết quả lần đầu: 2/3 câu đúng",
+          "accent": "mint"
+        },
+        {
+          "type": "card",
+          "title": "Đáp án & giải thích",
+          "body": "Hiện đáp án từng câu, lý do đúng/sai.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "card",
+          "title": "Transcript",
+          "body": "Transcript chỉ xuất hiện sau khi nộp bài nghe.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "card",
+          "title": "Luyện lại",
+          "body": "Kết quả luyện thêm không thay kết quả lần đầu.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "button",
+          "title": "Tiếp tục đến phần viết",
+          "route": "writing",
+          "accent": "yellow"
+        },
+        {
+          "type": "button",
+          "title": "Xem transcript",
+          "route": "listening_transcript",
+          "accent": "indigo",
+          "appearance": "ghost"
+        },
+        {
+          "type": "button",
+          "title": "Nghe luyện thêm",
+          "route": "listening_practice_again",
+          "accent": "indigo",
+          "appearance": "ghost"
+        }
+      ],
+      "actions": [],
+      "group": "Learner",
+      "requirements": []
+    },
+    {
+      "id": "writing",
+      "title": "Luyện viết",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "banner",
+          "title": "BƯỚC 3 / 3 — LUYỆN VIẾT",
+          "accent": "yellow"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Từ vựng",
+            "Nghe",
+            "Viết"
+          ]
+        },
+        {
+          "type": "hero",
+          "title": "WRITE IN CONTEXT",
+          "subtitle": "Viết một câu riêng cho mỗi tình huống.",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Tình huống 1 · Emergency fund",
+          "body": "Bạn khuyên một người bạn nên dành tiền cho các trường hợp bất ngờ.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "field",
+          "title": "Viết câu sử dụng “emergency fund”",
+          "hint": "Nhập một câu tiếng Anh…"
+        },
+        {
+          "type": "card",
+          "title": "Tình huống 2 · Expenditure",
+          "body": "Bạn muốn giải thích vì sao gia đình cần cắt giảm một khoản chi tiêu.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "field",
+          "title": "Viết câu sử dụng “expenditure”",
+          "hint": "Nhập một câu tiếng Anh…"
+        },
+        {
+          "type": "card",
+          "title": "Tình huống 3 · Household budget",
+          "body": "Bạn đề nghị gia đình lập ngân sách cho tháng tới.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "field",
+          "title": "Viết câu sử dụng “household budget”",
+          "hint": "Nhập một câu tiếng Anh…"
+        },
+        {
+          "type": "card",
+          "title": "Điều kiện nộp",
+          "body": "Câu quá ngắn hoặc lặp y hệt bị chặn. Thiếu từ mục tiêu vẫn được nộp và AI sẽ góp ý.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "button",
+          "title": "Nộp bài viết",
+          "route": "lesson_complete",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "group": "Learner",
+      "requirements": []
+    },
+    {
+      "id": "lesson_complete",
+      "title": "Hoàn thành bài học",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "celebrate",
+          "title": "HOÀN THÀNH!",
+          "accent": "mint"
+        },
+        {
+          "type": "hero",
+          "title": "XONG!",
+          "subtitle": "Bạn đã hoàn thành lesson sau khi nộp bài viết.",
+          "accent": "mint"
+        },
+        {
+          "type": "card",
+          "title": "7 TỪ ĐÃ HỌC",
+          "body": "Personal Finance & Budgeting – Part 1",
+          "accent": "yellow",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "chips",
+          "items": [
+            "Discretionary spending",
+            "Household budget",
+            "Financial literacy",
+            "To tighten one’s belt",
+            "Emergency fund",
+            "Expenditure",
+            "Living paycheck to paycheck"
+          ]
+        },
+        {
+          "type": "card",
+          "title": "Điểm học tập",
+          "body": "7 từ × 4 điểm = 28 điểm gốc; điểm thực nhận tùy trần 100 điểm lesson/ngày.",
+          "accent": "mint",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "card",
+          "title": "Lịch ôn",
+          "body": "Nhắc ôn sau 1, 3 và 7 ngày; mốc chỉ hợp lệ trong ngày đến hạn.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "card",
+          "title": "Nhận xét AI",
+          "body": "Đang xử lý • Lỗi AI không ảnh hưởng trạng thái hoàn thành.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "button",
+          "title": "Về trang học",
+          "route": "home",
+          "accent": "yellow",
+          "appearance": "ghost"
+        }
+      ],
+      "actions": [],
+      "group": "Learner",
+      "requirements": []
+    },
+    {
+      "id": "writing_feedback",
+      "title": "Nhận xét bài viết",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "AI WRITING FEEDBACK",
+          "subtitle": "Nhận xét từ AI; không tính vào điểm ranking.",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Câu gốc",
+          "body": "I should create emergency fund.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "card",
+          "title": "Ngữ pháp & cấu trúc",
+          "body": "Đề xuất bổ sung mạo từ trong ngữ cảnh phù hợp.",
+          "accent": "mint",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "card",
+          "title": "Cách dùng từ",
+          "body": "“Emergency fund” được dùng đúng hướng; xem gợi ý cải thiện.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "card",
+          "title": "Độ tự nhiên",
+          "body": "Cách diễn đạt tự nhiên hơn: I should build an emergency fund.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "button",
+          "title": "Sửa câu một lần",
+          "route": "writing_revision",
+          "accent": "yellow"
+        },
+        {
+          "type": "button",
+          "title": "Xem lịch sử học",
+          "route": "lesson_history",
+          "accent": "yellow",
+          "appearance": "ghost"
+        },
+        {
+          "type": "button",
+          "title": "Chi tiết nhận xét",
+          "route": "writing_feedback_detail",
+          "accent": "indigo",
+          "appearance": "ghost"
+        }
+      ],
+      "actions": [],
+      "group": "Learner",
+      "requirements": []
+    },
+    {
+      "id": "writing_revision",
+      "title": "Sửa bài viết",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "SỬA SAU NHẬN XÉT",
+          "subtitle": "Tối đa một lần gửi lại cho mỗi câu.",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Bản gốc",
+          "body": "I should create emergency fund.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "field",
+          "title": "Bản sửa",
+          "hint": "I should build an emergency fund."
+        },
+        {
+          "type": "button",
+          "title": "Gửi bản sửa",
+          "route": "writing_feedback",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "group": "Learner",
+      "requirements": []
+    },
+    {
+      "id": "review",
+      "title": "Ôn tập",
+      "tab": "Ôn tập",
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "ÔN TẬP THEO LỊCH",
+          "accent": "mint",
+          "subtitle": "Hệ thống nhắc ôn sau 1, 3 và 7 ngày"
+        },
+        {
+          "type": "segment",
+          "title": "Hôm nay  •  Sắp tới  •  Đã xong",
+          "accent": "mint"
+        },
+        {
+          "type": "card",
+          "title": "Finance — Part 1",
+          "accent": "mint",
+          "body": "Mốc D+1 • Hết hạn hôm nay • +2 điểm nếu hoàn thành",
+          "route": "review_detail",
+          "tag": "HÔM NAY"
+        },
+        {
+          "type": "card",
+          "title": "Finance — Part 2",
+          "accent": "indigo",
+          "body": "Mốc D+3 • Ngày mai",
+          "route": null,
+          "tag": "SẮP TỚI"
+        },
+        {
+          "type": "card",
+          "title": "Ôn tự do",
+          "accent": "indigo",
+          "body": "Luyện lại bất cứ lúc nào, không nhận điểm mốc ngoài ngày hiệu lực.",
+          "route": "review_outside",
+          "tag": "TỰ CHỌN"
+        },
+        {
+          "type": "button",
+          "title": "Bật nhắc ôn",
+          "route": "review_notify_permission",
+          "accent": "indigo"
+        }
+      ],
+      "actions": [],
+      "group": "Learner",
+      "requirements": []
+    },
+    {
+      "id": "review_detail",
+      "title": "Chi tiết ôn tập",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "ÔN LẠI PART 1",
+          "subtitle": "Mốc 1 ngày • Có hiệu lực hôm nay",
+          "accent": "yellow"
+        },
+        {
+          "type": "progress",
+          "title": "Tiến độ lịch ôn",
+          "value": 1,
+          "body": "Mốc 1 / 3 / 7 ngày"
+        },
+        {
+          "type": "card",
+          "title": "Phạm vi ôn",
+          "body": "7/7 từ mục tiêu + nghe ngắn + một câu viết.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "button",
+          "title": "Bắt đầu ôn",
+          "route": "review_vocab",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "group": "Learner",
+      "requirements": []
+    },
+    {
+      "id": "review_vocab",
+      "title": "Ôn từ vựng",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "NHỚ TỪ TRONG NGỮ CẢNH",
+          "subtitle": "Xem lại 7 từ/cụm từ đã học.",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Discretionary spending",
+          "body": "Chi tiêu tùy ý • ▶ Phát âm",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "card",
+          "title": "Emergency fund",
+          "body": "Quỹ khẩn cấp • ▶ Phát âm",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "card",
+          "title": "Household budget",
+          "body": "Ngân sách hộ gia đình • ▶ Phát âm",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "button",
+          "title": "Tiếp tục nghe",
+          "route": "review_listening",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "group": "Learner",
+      "requirements": []
+    },
+    {
+      "id": "review_listening",
+      "title": "Nghe ôn tập",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "LISTENING REVIEW",
+          "subtitle": "Nghe và trả lời câu hỏi ngắn.",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Audio",
+          "body": "▶ Phát / Tạm dừng",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "field",
+          "title": "Câu điền khuyết",
+          "hint": "Nhập đáp án…"
+        },
+        {
+          "type": "button",
+          "title": "Tiếp tục viết",
+          "route": "review_writing",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "group": "Learner",
+      "requirements": []
+    },
+    {
+      "id": "review_writing",
+      "title": "Viết khi ôn",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "VIẾT MỘT CÂU",
+          "subtitle": "Ưu tiên từ chưa từng xuất hiện trong câu đã nộp.",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Tình huống · Financial literacy",
+          "body": "Giải thích cho bạn vì sao nên hiểu kiến thức quản lý tiền.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "field",
+          "title": "Câu trả lời",
+          "hint": "Nhập một câu tiếng Anh…"
+        },
+        {
+          "type": "button",
+          "title": "Nộp bài ôn",
+          "route": "review_result",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "group": "Learner",
+      "requirements": []
+    },
+    {
+      "id": "review_result",
+      "title": "Kết quả ôn",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "ÔN TẬP XONG",
+          "subtitle": "Hoàn thành đúng ngày mốc: +2 điểm.",
+          "accent": "mint"
+        },
+        {
+          "type": "card",
+          "title": "Tự đối chiếu",
+          "body": "Hiện đáp án nghe, từ cần dùng, dạng được chấp nhận và câu ví dụ.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "card",
+          "title": "Ôn ngoài mốc",
+          "body": "Không cộng điểm, vẫn lưu lịch sử.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "button",
+          "title": "Về ôn tập",
+          "route": "review",
+          "accent": "yellow",
+          "appearance": "ghost"
+        },
+        {
+          "type": "button",
+          "title": "Đáp án sau khi nộp",
+          "route": "review_answer_reveal",
+          "accent": "indigo",
+          "appearance": "ghost"
+        }
+      ],
+      "actions": [],
+      "group": "Learner",
+      "requirements": []
+    },
+    {
+      "id": "progress",
+      "title": "Tiến độ",
+      "tab": "Tiến độ",
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "TIẾN ĐỘ",
+          "accent": "mint",
+          "subtitle": "Hoạt động học tập và thói quen"
+        },
+        {
+          "type": "banner",
+          "title": "Hành trình của bạn",
+          "accent": "indigo"
+        },
+        {
+          "type": "streak",
+          "title": "3 ngày học liên tục",
+          "accent": "yellow",
+          "route": "progress_streak"
+        },
+        {
+          "type": "heatmap",
+          "title": "Biểu đồ hoạt động",
+          "accent": "mint",
+          "route": "progress_heatmap"
+        },
+        {
+          "type": "stats",
+          "title": "THỐNG KÊ",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Lịch sử bài học",
+          "accent": "indigo",
+          "body": "Phân biệt kết quả nghe lần đầu và luyện thêm",
+          "route": "lesson_history",
+          "tag": ""
+        },
+        {
+          "type": "button",
+          "title": "Chi tiết hoạt động",
+          "accent": "yellow",
+          "route": "activity",
+          "appearance": "ghost"
+        },
+        {
+          "type": "button",
+          "title": "Kết quả nghe đầu",
+          "route": "progress_listening",
+          "accent": "indigo",
+          "appearance": "ghost"
+        },
+        {
+          "type": "button",
+          "title": "Sổ điểm",
+          "route": "progress_points",
+          "accent": "indigo",
+          "appearance": "ghost"
+        }
+      ],
+      "actions": [],
+      "group": "Learner",
+      "requirements": []
+    },
+    {
+      "id": "activity",
+      "title": "Hoạt động học tập",
+      "tab": "Tiến độ",
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "NHẬT KÝ HOẠT ĐỘNG",
+          "subtitle": "Dữ liệu học theo ngày",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Bản đồ hoạt động 5 tuần",
+          "body": "Các ô theo ngày • mức độ hoạt động, không phản ánh điểm IELTS.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "card",
+          "title": "Mục tiêu streak",
+          "body": "Hoàn thành lesson hoặc lượt ôn hợp lệ mỗi ngày.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "card",
+          "title": "Điểm học tập",
+          "body": "Hiển thị điểm gốc, điểm thực và thời điểm đặt lại trần.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "button",
+          "title": "Quay lại tiến độ",
+          "route": "progress",
+          "accent": "yellow",
+          "appearance": "ghost"
+        }
+      ],
+      "actions": [],
+      "group": "Learner",
+      "requirements": []
+    },
+    {
+      "id": "lesson_history",
+      "title": "Lịch sử bài học",
+      "tab": "Tiến độ",
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "LESSON HISTORY",
+          "subtitle": "Xem lại nội dung và kết quả",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Personal Finance – Part 1",
+          "body": "7 từ • Nghe lần đầu 2/3 • Đã nộp viết",
+          "accent": "mint",
+          "tag": "CHI TIẾT",
+          "route": "lesson_history_detail"
+        },
+        {
+          "type": "card",
+          "title": "Personal Finance – Part 2",
+          "body": "Đang học từ vựng",
+          "accent": "yellow",
+          "tag": "TIẾP TỤC",
+          "route": "lesson_detail"
+        }
+      ],
+      "actions": [],
+      "group": "Learner",
+      "requirements": []
+    },
+    {
+      "id": "lesson_history_detail",
+      "title": "Chi tiết lịch sử",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "PART 1 · COMPLETED",
+          "subtitle": "Phiên bản lesson đã học",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Từ mục tiêu",
+          "body": "7 từ/cụm từ • xem lại và nghe lại",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "card",
+          "title": "Kết quả nghe",
+          "body": "Lần đầu 2/3 • Luyện thêm 3/3",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "card",
+          "title": "Câu viết & AI",
+          "body": "Bản gốc, bản sửa và nhận xét theo từng câu.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "card",
+          "title": "Lịch ôn",
+          "body": "D+1 / D+3 / D+7; hoàn thành hoặc hết hiệu lực.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "button",
+          "title": "Xem phản hồi viết",
+          "route": "writing_feedback",
+          "accent": "yellow",
+          "appearance": "ghost"
+        }
+      ],
+      "actions": [],
+      "group": "Learner",
+      "requirements": []
+    },
+    {
+      "id": "ranking",
+      "title": "Xếp hạng",
+      "tab": "Xếp hạng",
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "XẾP HẠNG",
+          "accent": "yellow",
+          "subtitle": "Điểm hoạt động học tập, không phải IELTS band"
+        },
+        {
+          "type": "segment",
+          "title": "Tuần  •  Tháng  •  Tất cả",
+          "accent": "yellow",
+          "options": [
+            { "label": "Tuần", "route": "ranking", "selected": true },
+            { "label": "Tháng", "route": "ranking_month" },
+            { "label": "Tất cả", "route": "ranking_alltime" }
+          ]
+        },
+        {
+          "type": "banner",
+          "title": "Top 10 tuần này",
+          "accent": "indigo"
+        },
+        {
+          "type": "podium",
+          "title": "BẢNG VINH DANH",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "#04 Người học A",
+          "accent": "indigo",
+          "body": "510 điểm • nghe lần đầu 75% (tham khảo)",
+          "route": null,
+          "tag": ""
+        },
+        {
+          "type": "card",
+          "title": "#05 Người học B",
+          "accent": "indigo",
+          "body": "470 điểm • nghe lần đầu 66% (tham khảo)",
+          "route": null,
+          "tag": ""
+        },
+        {
+          "type": "card",
+          "title": "Hạng của bạn",
+          "accent": "mint",
+          "body": "Điểm tuần: 126 • nghe lần đầu: 72%",
+          "route": null,
+          "tag": ""
+        },
+        {
+          "type": "button",
+          "title": "Báo cáo tên không phù hợp",
+          "route": "report_name",
+          "accent": "mint",
+          "appearance": "ghost"
+        }
+      ],
+      "actions": [],
+      "group": "Learner",
+      "requirements": []
+    },
+    {
+      "id": "report_name",
+      "title": "Báo cáo tên",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "BÁO CÁO TÊN HIỂN THỊ",
+          "subtitle": "Chỉ báo cáo tên công khai không phù hợp.",
+          "accent": "yellow"
+        },
+        {
+          "type": "field",
+          "title": "Lý do báo cáo",
+          "hint": "Mô tả ngắn…"
+        },
+        {
+          "type": "button",
+          "title": "Gửi báo cáo",
+          "route": "ranking",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "group": "Learner",
+      "requirements": []
+    },
+    {
+      "id": "profile",
+      "title": "Hồ sơ",
+      "tab": "Hồ sơ",
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "profile",
+          "title": "NGƯỜI HỌC",
+          "accent": "yellow"
+        },
+        {
+          "type": "section",
+          "title": "HỌC TẬP",
+          "accent": "indigo"
+        },
+        {
+          "type": "card",
+          "title": "Chọn band và chủ đề",
+          "accent": "indigo",
+          "body": "Đổi mức bài muốn học, không mất lịch sử",
+          "route": "preferences",
+          "tag": ""
+        },
+        {
+          "type": "card",
+          "title": "Lịch sử học",
+          "accent": "indigo",
+          "body": "Bài đã học và nhận xét AI",
+          "route": "lesson_history",
+          "tag": ""
+        },
+        {
+          "type": "section",
+          "title": "CÀI ĐẶT",
+          "accent": "indigo"
+        },
+        {
+          "type": "card",
+          "title": "Nhắc ôn tập",
+          "accent": "mint",
+          "body": "Thông báo mốc D+1, D+3, D+7",
+          "route": "notification_settings",
+          "tag": ""
+        },
+        {
+          "type": "card",
+          "title": "Thông tin tài khoản",
+          "accent": "indigo",
+          "body": "Bảo mật và phiên đăng nhập",
+          "route": "account_settings",
+          "tag": ""
+        },
+        {
+          "type": "button",
+          "title": "Sửa tên hiển thị",
+          "accent": "yellow",
+          "route": "profile_edit",
+          "appearance": "ghost"
+        },
+        {
+          "type": "button",
+          "title": "Đăng xuất",
+          "route": "profile_logout_confirm",
+          "accent": "indigo"
+        }
+      ],
+      "actions": [],
+      "group": "Learner",
+      "requirements": []
+    },
+    {
+      "id": "profile_edit",
+      "title": "Sửa tên hiển thị",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "TÊN CÔNG KHAI",
+          "subtitle": "Thay đổi sau lần đặt đầu tối đa 1 lần/720 giờ.",
+          "accent": "yellow"
+        },
+        {
+          "type": "field",
+          "title": "Tên hiển thị",
+          "hint": "2–30 ký tự; không dùng email / số điện thoại"
+        },
+        {
+          "type": "button",
+          "title": "Lưu thay đổi",
+          "route": "profile",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "group": "Learner",
+      "requirements": []
+    },
+    {
+      "id": "preferences",
+      "title": "Tùy chọn học tập",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "THIẾT LẬP NỘI DUNG",
+          "subtitle": "Đổi band hoặc chủ đề không mất tiến độ.",
+          "accent": "yellow"
+        },
+        {
+          "type": "chips",
+          "items": [
+            "Dưới 4.0",
+            "4.0–5.0",
+            "5.5–6.5",
+            "7.0+"
+          ]
+        },
+        {
+          "type": "chips",
+          "items": [
+            "Finance",
+            "Technology",
+            "Environment",
+            "Education"
+          ]
+        },
+        {
+          "type": "button",
+          "title": "Lưu lựa chọn",
+          "route": "profile",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "group": "Learner",
+      "requirements": []
+    },
+    {
+      "id": "notification_settings",
+      "title": "Nhắc ôn tập",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "THÔNG BÁO ÔN TẬP",
+          "subtitle": "Từ chối quyền thông báo vẫn xem được lịch ôn trong app.",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Nhắc 19:00",
+          "body": "Các mốc ôn chưa hoàn thành trong ngày hiệu lực.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "card",
+          "title": "Nhắc 21:00",
+          "body": "Nhắc các mốc còn thiếu: hết hạn hôm nay.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "card",
+          "title": "Quyền thông báo",
+          "body": "Cho phép / Tắt trên thiết bị",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "button",
+          "title": "Lưu",
+          "route": "profile",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "group": "Learner",
+      "requirements": []
+    },
+    {
+      "id": "account_settings",
+      "title": "Tài khoản & bảo mật",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "CÀI ĐẶT TÀI KHOẢN",
+          "subtitle": "Liên hệ, mật khẩu và các phiên đăng nhập của bạn.",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Thông tin tài khoản",
+          "body": "Gmail/SĐT có thể để trống hoặc chưa xác thực.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "card",
+          "title": "Đổi mật khẩu  ›",
+          "body": "Đổi mật khẩu sẽ yêu cầu đăng nhập lại trên mọi thiết bị.",
+          "accent": "indigo",
+          "tag": "",
+          "route": "change_password",
+          "linkText": false
+        },
+        {
+          "type": "card",
+          "title": "Quản lý phiên  ›",
+          "body": "Xem và thu hồi các phiên đang hoạt động.",
+          "accent": "indigo",
+          "tag": "",
+          "route": "active_sessions",
+          "linkText": false
+        }
+      ],
+      "actions": [],
+      "group": "Learner",
+      "requirements": []
+    },
+    {
+      "id": "change_password",
+      "title": "Đổi mật khẩu",
+      "parent": "account_settings",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "BẢO MẬT TÀI KHOẢN",
+          "subtitle": "Đổi mật khẩu sẽ kết thúc mọi phiên đăng nhập.",
+          "accent": "yellow"
+        },
+        {
+          "type": "field",
+          "title": "Mật khẩu hiện tại",
+          "hint": "Nhập mật khẩu đang dùng"
+        },
+        {
+          "type": "field",
+          "title": "Mật khẩu mới",
+          "hint": "Nhập mật khẩu mới"
+        },
+        {
+          "type": "field",
+          "title": "Xác nhận mật khẩu mới",
+          "hint": "Nhập lại mật khẩu mới"
+        },
+        {
+          "type": "button",
+          "title": "Đổi mật khẩu",
+          "route": "password_changed",
+          "accent": "yellow"
+        }
+      ]
+    },
+    {
+      "id": "password_changed",
+      "title": "Đổi mật khẩu thành công",
+      "screenKind": "response_state",
+      "parent": "welcome",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Mật khẩu đã đổi",
+          "subtitle": "Các phiên cũ đã kết thúc. Hãy đăng nhập lại.",
+          "accent": "mint"
+        },
+        {
+          "type": "button",
+          "title": "Đăng nhập lại",
+          "route": "welcome",
+          "accent": "yellow"
+        }
+      ]
+    },
+    {
+      "id": "active_sessions",
+      "title": "Quản lý phiên",
+      "parent": "account_settings",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "CÁC PHIÊN ĐĂNG NHẬP",
+          "subtitle": "Chỉ hiển thị phiên còn hiệu lực và hoạt động cuối.",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Phiên hiện tại",
+          "body": "Thiết bị này · thời điểm hoạt động cuối từ hệ thống",
+          "accent": "indigo",
+          "route": null
+        },
+        {
+          "type": "card",
+          "title": "Phiên khác",
+          "body": "Mỗi lần đăng nhập là một phiên; có thể thu hồi riêng.",
+          "accent": "indigo",
+          "route": null
+        },
+        {
+          "type": "card",
+          "title": "Đăng xuất tất cả  ›",
+          "body": "Xác nhận sẽ kết thúc mọi phiên, kể cả thiết bị này.",
+          "accent": "indigo",
+          "route": "sessions_revoke_confirm",
+          "linkText": false
+        }
+      ]
+    },
+    {
+      "id": "sessions_revoke_confirm",
+      "title": "Đăng xuất tất cả?",
+      "screenKind": "response_state",
+      "parent": "active_sessions",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Xác nhận thu hồi phiên",
+          "subtitle": "Mọi thiết bị sẽ phải đăng nhập lại sau khi hệ thống xác nhận.",
+          "accent": "yellow"
+        },
+        {
+          "type": "button",
+          "title": "Hủy",
+          "route": "active_sessions",
+          "accent": "yellow",
+          "appearance": "ghost"
+        },
+        {
+          "type": "button",
+          "title": "Xác nhận",
+          "route": "session_expired",
+          "accent": "yellow"
+        }
+      ]
+    },
+    {
+      "id": "admin_topics",
+      "title": "Admin · Chủ đề",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "CONTENT MANAGEMENT",
+          "subtitle": "Bảng quản trị nội dung - thiết kế mobile minh họa",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Chủ đề",
+          "body": "Tạo / sửa / ẩn chủ đề",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "card",
+          "title": "Lesson nháp",
+          "body": "Biên soạn 5–8 từ, nghe và 2–3 prompt viết.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "button",
+          "title": "Soạn lesson",
+          "route": "admin_editor",
+          "accent": "yellow"
+        },
+        {
+          "type": "button",
+          "title": "Tạo / sửa chủ đề",
+          "route": "admin_topic_edit",
+          "accent": "indigo",
+          "appearance": "ghost"
+        },
+        {
+          "type": "button",
+          "title": "Quản lý lesson",
+          "route": "admin_lesson_list",
+          "accent": "indigo",
+          "appearance": "ghost"
+        }
+      ],
+      "actions": [],
+      "group": "Admin",
+      "requirements": []
+    },
+    {
+      "id": "admin_editor",
+      "title": "Admin · Soạn lesson",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "LESSON EDITOR",
+          "subtitle": "Dữ liệu do admin biên soạn, AI không tạo nội dung lesson.",
+          "accent": "yellow"
+        },
+        {
+          "type": "field",
+          "title": "Tiêu đề lesson",
+          "hint": "Nhập nội dung..."
+        },
+        {
+          "type": "chips",
+          "items": [
+            "Dưới 4.0",
+            "4.0–5.0",
+            "5.5–6.5",
+            "7.0+"
+          ]
+        },
+        {
+          "type": "card",
+          "title": "Từ vựng",
+          "body": "Headword, nghĩa VN, IPA, audio, câu mẫu, hội thoại, tình huống.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "card",
+          "title": "Listening",
+          "body": "Audio / TTS duyệt, transcript, câu hỏi, đáp án, giải thích.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "card",
+          "title": "Writing",
+          "body": "2–3 tình huống riêng, mỗi tình huống một từ.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "card",
+          "title": "Kiểm duyệt xuất bản",
+          "body": "Thiếu nội dung hoặc media chưa duyệt phải chặn xuất bản.",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "button",
+          "title": "Xem trước learner",
+          "route": "lesson_detail",
+          "accent": "yellow",
+          "appearance": "ghost"
+        },
+        {
+          "type": "button",
+          "title": "Soạn từ vựng",
+          "route": "admin_vocab_edit",
+          "accent": "indigo"
+        },
+        {
+          "type": "button",
+          "title": "Tạo / duyệt TTS",
+          "route": "admin_audio_tts",
+          "accent": "indigo",
+          "appearance": "ghost"
+        },
+        {
+          "type": "button",
+          "title": "Soạn bài nghe",
+          "route": "admin_listening_edit",
+          "accent": "indigo",
+          "appearance": "ghost"
+        },
+        {
+          "type": "button",
+          "title": "Soạn bài viết",
+          "route": "admin_writing_edit",
+          "accent": "indigo",
+          "appearance": "ghost"
+        },
+        {
+          "type": "button",
+          "title": "Xem trước",
+          "route": "admin_preview",
+          "accent": "indigo",
+          "appearance": "ghost"
+        },
+        {
+          "type": "button",
+          "title": "Kiểm tra xuất bản",
+          "route": "admin_publish_check",
+          "accent": "indigo",
+          "appearance": "ghost"
+        }
+      ],
+      "actions": [],
+      "group": "Admin",
+      "requirements": []
+    },
+    {
+      "id": "auth_invalid",
+      "title": "Không thể đăng nhập",
+      "group": "Tài khoản",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Thông tin đăng nhập không hợp lệ",
+          "subtitle": "Kiểm tra và thử lại hoặc khôi phục mật khẩu",
+          "accent": "yellow"
+        },
+        {
+          "type": "field",
+          "title": "Tài khoản",
+          "hint": "Nhập thông tin"
+        },
+        {
+          "type": "field",
+          "title": "Mật khẩu",
+          "hint": "••••••••"
+        },
+        {
+          "type": "card",
+          "title": "Thông báo",
+          "body": "Thông tin đăng nhập không hợp lệ",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "button",
+          "title": "Thử lại",
+          "route": "welcome",
+          "accent": "yellow"
+        },
+        {
+          "type": "button",
+          "title": "Quên mật khẩu",
+          "route": "forgot_password",
+          "accent": "yellow",
+          "appearance": "ghost"
+        }
+      ],
+      "actions": [],
+      "parent": "welcome",
+      "requirements": [],
+      "screenKind": "response_state"
+    },
+    {
+      "id": "register_validation",
+      "title": "Kiểm tra đăng ký",
+      "group": "Tài khoản",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Hoàn thiện thông tin",
+          "subtitle": "Kiểm tra dữ liệu trước khi tạo tài khoản",
+          "accent": "yellow"
+        },
+        {
+          "type": "field",
+          "title": "Tên đăng nhập",
+          "hint": "Kiểm tra thông tin đã nhập"
+        },
+        {
+          "type": "card",
+          "title": "Yêu cầu",
+          "body": "Hiển thị lỗi tại trường cần sửa theo phản hồi của hệ thống.",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "button",
+          "title": "Sửa thông tin",
+          "route": "register",
+          "accent": "yellow",
+          "appearance": "ghost"
+        }
+      ],
+      "actions": [],
+      "parent": "register",
+      "requirements": [],
+      "screenKind": "response_state"
+    },
+    {
+      "id": "reset_sent",
+      "title": "Xác minh mã OTP",
+      "group": "Tài khoản",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Kiểm tra mã khôi phục",
+          "subtitle": "Mã gồm 6 số, có hiệu lực trong 5 phút.",
+          "accent": "mint"
+        },
+        {
+          "type": "card",
+          "title": "Thông báo",
+          "body": "Nếu thông tin phù hợp, mã khôi phục sẽ được gửi qua kênh đã chọn",
+          "accent": "mint"
+        },
+        {
+          "type": "field",
+          "title": "Mã OTP",
+          "hint": "Nhập 6 chữ số"
+        },
+        {
+          "type": "button",
+          "title": "Xác minh mã",
+          "route": "reset_password",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "parent": "forgot_password",
+      "requirements": [],
+      "screenKind": "response_state"
+    },
+    {
+      "id": "reset_password",
+      "title": "Đặt mật khẩu mới",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Đặt mật khẩu mới",
+          "subtitle": "Mã OTP đã được xác minh.",
+          "accent": "yellow"
+        },
+        {
+          "type": "field",
+          "title": "Mật khẩu mới",
+          "hint": "Nhập mật khẩu mới"
+        },
+        {
+          "type": "field",
+          "title": "Xác nhận mật khẩu",
+          "hint": "Nhập lại mật khẩu"
+        },
+        {
+          "type": "button",
+          "title": "Đặt lại mật khẩu",
+          "route": "reset_complete",
+          "accent": "yellow"
+        }
+      ]
+    },
+    {
+      "id": "reset_complete",
+      "title": "Đặt lại thành công",
+      "screenKind": "response_state",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Mật khẩu đã thay đổi",
+          "subtitle": "Các phiên cũ đã kết thúc. Hãy đăng nhập lại.",
+          "accent": "mint"
+        },
+        {
+          "type": "button",
+          "title": "Đăng nhập lại",
+          "route": "welcome",
+          "accent": "yellow"
+        }
+      ]
+    },
+    {
+      "id": "session_expired",
+      "title": "Phiên đăng nhập hết hạn",
+      "group": "Tài khoản",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Cần đăng nhập lại",
+          "subtitle": "Các bản đã lưu phía máy chủ vẫn được giữ",
+          "accent": "yellow"
+        },
+        {
+          "type": "button",
+          "title": "Đăng nhập",
+          "route": "welcome",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "parent": "welcome",
+      "requirements": [],
+      "screenKind": "response_state"
+    },
+    {
+      "id": "onboarding_topics_error",
+      "title": "Chưa chọn chủ đề",
+      "group": "Onboarding",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Chọn ít nhất một chủ đề",
+          "subtitle": "Có thể đổi lựa chọn sau này",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Gợi ý",
+          "body": "Finance · Travel · Education · Technology",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "button",
+          "title": "Chọn chủ đề",
+          "route": "onboarding_topics",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "parent": "onboarding_topics",
+      "requirements": [
+        "ONB-01"
+      ],
+      "screenKind": "response_state"
+    },
+    {
+      "id": "onboarding_name_error",
+      "title": "Tên chưa phù hợp",
+      "group": "Onboarding",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Tên hiển thị không hợp lệ",
+          "subtitle": "Có thể chỉnh sửa hoặc bỏ qua",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Quy tắc",
+          "body": "Tên công khai phải hợp lệ theo PRG-R07; không dùng email, SĐT",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "button",
+          "title": "Sửa tên",
+          "route": "onboarding_name",
+          "accent": "yellow"
+        },
+        {
+          "type": "button",
+          "title": "Bỏ qua",
+          "route": "home",
+          "accent": "yellow",
+          "appearance": "ghost"
+        }
+      ],
+      "actions": [],
+      "parent": "onboarding_name",
+      "requirements": [
+        "ONB-03",
+        "PRG-R07"
+      ],
+      "screenKind": "response_state"
+    },
+    {
+      "id": "catalog_empty",
+      "title": "Chưa có bài phù hợp",
+      "group": "Khám phá",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Chưa có lesson cho bộ lọc này",
+          "subtitle": "Thử band nội dung hoặc chủ đề khác",
+          "accent": "yellow"
+        },
+        {
+          "type": "button",
+          "title": "Đổi bộ lọc",
+          "route": "catalog",
+          "accent": "yellow",
+          "appearance": "ghost"
+        }
+      ],
+      "actions": [],
+      "parent": "catalog",
+      "requirements": [
+        "CAT-01",
+        "CAT-02"
+      ],
+      "screenKind": "response_state"
+    },
+    {
+      "id": "catalog_search",
+      "title": "Tìm bài học",
+      "group": "Khám phá",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Tìm kiếm chủ đề",
+          "subtitle": "Lọc theo band và chủ đề",
+          "accent": "yellow"
+        },
+        {
+          "type": "field",
+          "title": "Tên chủ đề hoặc bài học",
+          "hint": "Tìm từ khóa…"
+        },
+        {
+          "type": "card",
+          "title": "Bộ lọc",
+          "body": "< 4.0 · 4.0–5.0 · 5.5–6.5 · 7.0+",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "button",
+          "title": "Xem tất cả",
+          "route": "catalog",
+          "accent": "yellow",
+          "appearance": "ghost"
+        }
+      ],
+      "actions": [],
+      "parent": "catalog",
+      "requirements": [
+        "CAT-01",
+        "CAT-02"
+      ]
+    },
+    {
+      "id": "lesson_locked",
+      "title": "Chưa thể sang bước sau",
+      "group": "Học tập",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Học đúng trình tự",
+          "subtitle": "Phải xem đủ từ, nộp bài nghe rồi mới viết",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Thứ tự",
+          "body": "Từ vựng → Luyện nghe → Luyện viết",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "button",
+          "title": "Trở lại bài học",
+          "route": "lesson_detail",
+          "accent": "yellow",
+          "appearance": "ghost"
+        }
+      ],
+      "actions": [],
+      "parent": "lesson_detail",
+      "requirements": [
+        "LES-R01"
+      ],
+      "screenKind": "response_state"
+    },
+    {
+      "id": "lesson_continue",
+      "title": "Tiếp tục bài dang dở",
+      "group": "Học tập",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Tiếp tục từ bước đã lưu",
+          "subtitle": "Dữ liệu bài học gắn với phiên bản đang học",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Trạng thái",
+          "body": "Mở bước gần nhất đã được máy chủ xác nhận",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "button",
+          "title": "Tiếp tục học từ",
+          "route": "vocab_1",
+          "accent": "yellow"
+        },
+        {
+          "type": "button",
+          "title": "Trở lại chủ đề",
+          "route": "topic_detail",
+          "accent": "yellow",
+          "appearance": "ghost"
+        }
+      ],
+      "actions": [],
+      "parent": "lesson_detail",
+      "requirements": [
+        "LES-01",
+        "LES-R04"
+      ],
+      "screenKind": "response_state"
+    },
+    {
+      "id": "vocab_audio_error",
+      "title": "Không phát được phát âm",
+      "group": "Học tập",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Lỗi phát âm",
+          "subtitle": "Mất mạng hoặc tệp âm thanh không tải được",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Từ và ngữ cảnh",
+          "body": "Giữ nguyên nội dung, có nút tải lại",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "button",
+          "title": "Thử phát lại",
+          "route": "vocab_1",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "parent": "vocab_1",
+      "requirements": [
+        "LES-02",
+        "LES-R06"
+      ],
+      "screenKind": "response_state"
+    },
+    {
+      "id": "vocab_situation",
+      "title": "Tình huống sử dụng từ",
+      "group": "Học tập",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Discretionary spending",
+          "subtitle": "Chi tiêu tùy ý",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Ý nghĩa theo ngữ cảnh",
+          "body": "Khoản chi không thiết yếu; có giải nghĩa tiếng Việt",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "card",
+          "title": "IPA và phát âm",
+          "body": "/dɪˈskreʃəneri ˈspendɪŋ/  ▶",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "card",
+          "title": "Câu mẫu",
+          "body": "I want to cut my discretionary spending this month.",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "card",
+          "title": "Hội thoại ngắn",
+          "body": "A: How do you save money?  B: I reduce unnecessary spending.",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "button",
+          "title": "Tiếp tục",
+          "route": "vocab_2",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "parent": "vocab_1",
+      "requirements": [
+        "CNT-03",
+        "LES-02"
+      ]
+    },
+    {
+      "id": "listening_loading",
+      "title": "Đang tải audio",
+      "group": "Luyện nghe",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Đang chuẩn bị bài nghe",
+          "subtitle": "Bài nghe của lesson đã xuất bản",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Trạng thái",
+          "body": "Loading / buffering",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "button",
+          "title": "Quay về luyện nghe",
+          "route": "listening",
+          "accent": "yellow",
+          "appearance": "ghost"
+        }
+      ],
+      "actions": [],
+      "parent": "listening",
+      "requirements": [
+        "LES-03"
+      ],
+      "screenKind": "response_state"
+    },
+    {
+      "id": "listening_audio_error",
+      "title": "Lỗi tải bài nghe",
+      "group": "Luyện nghe",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Không phát được audio",
+          "subtitle": "Thử lại khi đường truyền ổn định",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Đã lưu",
+          "body": "Câu trả lời trước đó không bị xóa nếu đã lưu thành công",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "button",
+          "title": "Tải lại audio",
+          "route": "listening",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "parent": "listening",
+      "requirements": [
+        "LES-R06"
+      ],
+      "screenKind": "response_state"
+    },
+    {
+      "id": "listening_not_finished",
+      "title": "Chưa nghe hết audio",
+      "group": "Luyện nghe",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Hãy nghe hết bài",
+          "subtitle": "Cần phát hết tối thiểu một lượt trước khi nộp",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Tiến độ",
+          "body": "Không tính nếu chỉ tua qua đoạn chưa phát",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "button",
+          "title": "Tiếp tục nghe",
+          "route": "listening",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "parent": "listening",
+      "requirements": [
+        "LES-R12"
+      ],
+      "screenKind": "response_state"
+    },
+    {
+      "id": "listening_missing",
+      "title": "Còn câu chưa trả lời",
+      "group": "Luyện nghe",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Hoàn thành tất cả câu hỏi",
+          "subtitle": "Có thể nộp ngay cả khi đáp án chưa chắc đúng",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Cần bổ sung",
+          "body": "Câu 2: chọn đáp án · Câu 4: điền khuyết",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "button",
+          "title": "Quay lại bài nghe",
+          "route": "listening",
+          "accent": "yellow",
+          "appearance": "ghost"
+        }
+      ],
+      "actions": [],
+      "parent": "listening",
+      "requirements": [
+        "LES-R10"
+      ],
+      "screenKind": "response_state"
+    },
+    {
+      "id": "listening_submitting",
+      "title": "Đang nộp bài nghe",
+      "group": "Luyện nghe",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Đang chấm bài",
+          "subtitle": "Đợi máy chủ xác nhận",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Tiến độ",
+          "body": "Không tuyên bố đã lưu trước khi nhận kết quả",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "button",
+          "title": "Xem kết quả khi hoàn tất",
+          "route": "listening_result",
+          "accent": "yellow",
+          "appearance": "ghost"
+        }
+      ],
+      "actions": [],
+      "parent": "listening",
+      "requirements": [
+        "LES-04",
+        "LES-R04"
+      ],
+      "screenKind": "response_state"
+    },
+    {
+      "id": "listening_transcript",
+      "title": "Transcript và giải thích",
+      "group": "Luyện nghe",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Đã mở Transcript",
+          "subtitle": "Chỉ hiện sau lần nộp hợp lệ",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Transcript",
+          "body": "Personal Finance & Budgeting – Part 1 (dữ liệu mẫu)",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "card",
+          "title": "Giải thích câu sai",
+          "body": "Xem đáp án và nguyên nhân",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "button",
+          "title": "Viết câu vận dụng",
+          "route": "writing",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "parent": "listening_result",
+      "requirements": [
+        "D-17",
+        "LES-R09"
+      ]
+    },
+    {
+      "id": "listening_practice_again",
+      "title": "Nghe luyện thêm",
+      "group": "Luyện nghe",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Luyện nghe lại",
+          "subtitle": "Kết quả tốt nhất ghi riêng, không thay kết quả lần đầu",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Kết quả đầu tiên",
+          "body": "Chỉ số chính dùng để đo tiến độ",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "card",
+          "title": "Bài luyện thêm",
+          "body": "Không cộng điểm ranking",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "button",
+          "title": "Bắt đầu luyện thêm",
+          "route": "listening",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "parent": "listening_result",
+      "requirements": [
+        "LES-R03"
+      ]
+    },
+    {
+      "id": "writing_missing_target",
+      "title": "Thiếu từ mục tiêu",
+      "group": "Luyện viết",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Câu chưa dùng từ được yêu cầu",
+          "subtitle": "Vẫn có thể nộp nếu câu hợp lệ",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Tình huống",
+          "body": "Dùng discretionary spending để nói về việc giảm chi tiêu",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "card",
+          "title": "Nhận xét AI",
+          "body": "Sau khi nộp, AI sẽ gợi ý cách dùng từ đang thiếu",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "button",
+          "title": "Sửa câu",
+          "route": "writing",
+          "accent": "yellow"
+        },
+        {
+          "type": "button",
+          "title": "Vẫn nộp hợp lệ",
+          "route": "lesson_complete",
+          "accent": "yellow",
+          "appearance": "ghost"
+        }
+      ],
+      "actions": [],
+      "parent": "writing",
+      "requirements": [
+        "D-14",
+        "LES-R07"
+      ],
+      "screenKind": "response_state"
+    },
+    {
+      "id": "writing_validation",
+      "title": "Câu viết cần sửa",
+      "group": "Luyện viết",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Kiểm tra trước khi nộp",
+          "subtitle": "Không dùng AI cho kiểm tra tối thiểu",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Câu quá ngắn",
+          "body": "Tối thiểu 3 từ chứa chữ Latin và có 2 từ khác nhau",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "card",
+          "title": "Câu trùng/lặp rác",
+          "body": "Cùng câu giữa các ô bị chặn; token lặp bất thường bị chặn",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "button",
+          "title": "Sửa từng câu",
+          "route": "writing",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "parent": "writing",
+      "requirements": [
+        "LES-R11"
+      ],
+      "screenKind": "response_state"
+    },
+    {
+      "id": "writing_dictionary_warning",
+      "title": "Cảnh báo ngôn ngữ",
+      "group": "Luyện viết",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Câu có vẻ chưa phải tiếng Anh",
+          "subtitle": "Đây chỉ là cảnh báo, không chặn nộp",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Từ điển",
+          "body": "Dưới 60% token nhận diện; từ IELTS/tên riêng có thể bị cảnh báo nhầm",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "button",
+          "title": "Sửa câu",
+          "route": "writing",
+          "accent": "yellow"
+        },
+        {
+          "type": "button",
+          "title": "Vẫn nộp",
+          "route": "lesson_complete",
+          "accent": "yellow",
+          "appearance": "ghost"
+        }
+      ],
+      "actions": [],
+      "parent": "writing",
+      "requirements": [
+        "LES-R13"
+      ],
+      "screenKind": "response_state"
+    },
+    {
+      "id": "writing_save_failed",
+      "title": "Chưa lưu được bài",
+      "group": "Luyện viết",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Gửi bài chưa thành công",
+          "subtitle": "Kiểm tra mạng rồi thử lại",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Nháp",
+          "body": "Chỉ xác nhận đã lưu khi máy chủ xác nhận",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "button",
+          "title": "Thử gửi lại",
+          "route": "writing",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "parent": "writing",
+      "requirements": [
+        "LES-R04",
+        "LES-R06"
+      ],
+      "screenKind": "response_state"
+    },
+    {
+      "id": "writing_feedback_pending",
+      "title": "AI đang nhận xét",
+      "group": "Nhận xét AI",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Bài học đã hoàn thành",
+          "subtitle": "Có thể quay lại xem nhận xét sau",
+          "accent": "mint"
+        },
+        {
+          "type": "card",
+          "title": "Trạng thái",
+          "body": "Feedback đang xử lý không ảnh hưởng tiến độ, điểm, streak",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "button",
+          "title": "Xem trạng thái nhận xét",
+          "route": "writing_feedback",
+          "accent": "yellow",
+          "appearance": "ghost"
+        }
+      ],
+      "actions": [],
+      "parent": "lesson_complete",
+      "requirements": [
+        "WRF-01",
+        "D-06"
+      ],
+      "screenKind": "response_state"
+    },
+    {
+      "id": "writing_feedback_deferred",
+      "title": "AI tạm hoãn",
+      "group": "Nhận xét AI",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Đã chạm giới hạn nhận xét",
+          "subtitle": "Dự kiến xử lý lại theo retry_after_at",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Hạn mức",
+          "body": "30 lượt gọi thực tế/người/ngày UTC",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "card",
+          "title": "Bài đã nộp",
+          "body": "Lesson vẫn hoàn thành; không mất câu gốc",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "button",
+          "title": "Quay về bài học",
+          "route": "lesson_complete",
+          "accent": "yellow",
+          "appearance": "ghost"
+        }
+      ],
+      "actions": [],
+      "parent": "writing_feedback",
+      "requirements": [
+        "WRF-R06"
+      ],
+      "screenKind": "response_state"
+    },
+    {
+      "id": "writing_feedback_error",
+      "title": "Không tạo được nhận xét",
+      "group": "Nhận xét AI",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "AI gặp lỗi",
+          "subtitle": "Có thể yêu cầu nhận xét lại cùng phiên bản",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Câu gốc đã lưu",
+          "body": "Không bị xóa và không cần nộp bài học lại",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "button",
+          "title": "Thử nhận xét lại",
+          "route": "writing_feedback",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "parent": "writing_feedback",
+      "requirements": [
+        "WRF-03"
+      ],
+      "screenKind": "response_state"
+    },
+    {
+      "id": "writing_feedback_detail",
+      "title": "Phân tích câu viết",
+      "group": "Nhận xét AI",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Nhận xét bởi AI",
+          "subtitle": "Hiển thị câu gốc, không sửa dữ liệu nộp",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Ngữ pháp",
+          "body": "Kiểm tra cấu trúc câu",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "card",
+          "title": "Cách dùng từ mục tiêu",
+          "body": "Đề xuất khi thiếu từ hoặc dùng sai ngữ cảnh",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "card",
+          "title": "Độ tự nhiên",
+          "body": "Gợi ý diễn đạt theo tình huống",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "button",
+          "title": "Sửa câu một lần",
+          "route": "writing_revision",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "parent": "writing_feedback",
+      "requirements": [
+        "WRF-02",
+        "WRF-04"
+      ]
+    },
+    {
+      "id": "writing_revision_success",
+      "title": "Đã gửi bản sửa",
+      "group": "Nhận xét AI",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Phiên bản 2 đã lưu",
+          "subtitle": "Bản gốc và bản sửa được lưu riêng",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Giới hạn",
+          "body": "Chỉ một lần sửa sau feedback cho mỗi câu",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "button",
+          "title": "Xem nhận xét mới",
+          "route": "writing_feedback",
+          "accent": "yellow",
+          "appearance": "ghost"
+        }
+      ],
+      "actions": [],
+      "parent": "writing_revision",
+      "requirements": [
+        "D-16",
+        "WRF-04"
+      ],
+      "screenKind": "response_state"
+    },
+    {
+      "id": "writing_revision_blocked",
+      "title": "Đã hết lượt sửa",
+      "group": "Nhận xét AI",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Không thể gửi lần ba",
+          "subtitle": "Có thể xem lại bản 1 và bản 2",
+          "accent": "yellow"
+        },
+        {
+          "type": "button",
+          "title": "Xem lịch sử nhận xét",
+          "route": "writing_feedback",
+          "accent": "yellow",
+          "appearance": "ghost"
+        }
+      ],
+      "actions": [],
+      "parent": "writing_revision",
+      "requirements": [
+        "WRF-04"
+      ],
+      "screenKind": "response_state"
+    },
+    {
+      "id": "lesson_points_capped",
+      "title": "Điểm trong ngày",
+      "group": "Hoàn thành",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Đã hoàn thành lesson!",
+          "subtitle": "Điểm nhận thực tế có thể khác điểm gốc",
+          "accent": "mint"
+        },
+        {
+          "type": "card",
+          "title": "Ví dụ",
+          "body": "Điểm gốc 40 · Đã nhận trong ngày 80 → Thực nhận 20",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "card",
+          "title": "Chính sách",
+          "body": "Trần 100 điểm lesson/ngày theo Asia/Ho_Chi_Minh; không cộng bù",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "button",
+          "title": "Xem tiến độ",
+          "route": "progress",
+          "accent": "yellow",
+          "appearance": "ghost"
+        }
+      ],
+      "actions": [],
+      "parent": "lesson_complete",
+      "requirements": [
+        "PRG-R09"
+      ],
+      "screenKind": "response_state"
+    },
+    {
+      "id": "review_today",
+      "title": "Ôn tập đến hạn hôm nay",
+      "group": "Ôn tập",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Hết hạn hôm nay",
+          "subtitle": "Các mốc D+1, D+3, D+7 chỉ có hiệu lực trong ngày",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Mốc đang chờ",
+          "body": "Hoàn thành để nhận 2 điểm, không phụ thuộc đúng/sai",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "button",
+          "title": "Ôn ngay",
+          "route": "review_detail",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "parent": "review",
+      "requirements": [
+        "REV-R01"
+      ],
+      "screenKind": "response_state"
+    },
+    {
+      "id": "review_upcoming",
+      "title": "Ôn sắp tới",
+      "group": "Ôn tập",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Lịch ôn sắp tới",
+          "subtitle": "Các mốc D+1, D+3, D+7 được chốt khi hoàn thành lesson",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Thông báo",
+          "body": "Có thể bật nhắc push; không bắt buộc",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "button",
+          "title": "Xem lịch ôn",
+          "route": "review",
+          "accent": "yellow",
+          "appearance": "ghost"
+        }
+      ],
+      "actions": [],
+      "parent": "review",
+      "requirements": [
+        "REV-01"
+      ],
+      "screenKind": "response_state"
+    },
+    {
+      "id": "review_expired",
+      "title": "Mốc ôn đã hết hạn",
+      "group": "Ôn tập",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Đã quá ngày ôn",
+          "subtitle": "Không được hoàn thành bù mốc cũ",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Trạng thái",
+          "body": "Expired — vẫn có thể ôn ngoài mốc, không cộng điểm",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "button",
+          "title": "Ôn ngoài mốc",
+          "route": "review_detail",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "parent": "review",
+      "requirements": [
+        "REV-R01"
+      ],
+      "screenKind": "response_state"
+    },
+    {
+      "id": "review_outside",
+      "title": "Ôn ngoài mốc",
+      "group": "Ôn tập",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Ôn tự do",
+          "subtitle": "Có thể luyện lại bất cứ lúc nào",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Điểm mốc",
+          "body": "0 điểm nếu không thuộc cửa sổ D+1 / D+3 / D+7 hợp lệ",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "button",
+          "title": "Bắt đầu ôn",
+          "route": "review_vocab",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "parent": "review",
+      "requirements": [
+        "REV-R01"
+      ]
+    },
+    {
+      "id": "review_answer_reveal",
+      "title": "Đáp án ôn tập",
+      "group": "Ôn tập",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Đã nộp lượt ôn",
+          "subtitle": "Xem đáp án nghe, từ vựng và câu mẫu sau nộp",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Câu viết",
+          "body": "Một câu theo tình huống, không chấm AI",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "button",
+          "title": "Xem kết quả ôn",
+          "route": "review_result",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "parent": "review_result",
+      "requirements": [
+        "REV-R03",
+        "REV-R06"
+      ]
+    },
+    {
+      "id": "review_revoked",
+      "title": "Nội dung tạm dừng",
+      "group": "Ôn tập",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Phiên bản lesson đã thu hồi",
+          "subtitle": "Không phát lại nội dung sai; lịch sử và điểm vẫn giữ",
+          "accent": "yellow"
+        },
+        {
+          "type": "button",
+          "title": "Quay về Ôn tập",
+          "route": "review",
+          "accent": "yellow",
+          "appearance": "ghost"
+        }
+      ],
+      "actions": [],
+      "parent": "review",
+      "requirements": [
+        "CNT-R10",
+        "REV-R04"
+      ],
+      "screenKind": "response_state"
+    },
+    {
+      "id": "review_notify_permission",
+      "title": "Cho phép nhắc ôn",
+      "group": "Ôn tập",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Nhắc đúng lúc",
+          "subtitle": "19:00 và 21:00 theo múi giờ snapshot",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Không bắt buộc",
+          "body": "Từ chối quyền push vẫn xem được lịch ôn trong app",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "button",
+          "title": "Thiết lập nhắc ôn",
+          "route": "notification_settings",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "parent": "notification_settings",
+      "requirements": [
+        "REV-04"
+      ]
+    },
+    {
+      "id": "progress_listening",
+      "title": "Kết quả nghe lần đầu",
+      "group": "Tiến độ",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Chỉ số nghe lần đầu",
+          "subtitle": "Tỷ lệ đúng khi nộp hợp lệ lần đầu, không tính luyện lại",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Thông số",
+          "body": "Số câu đúng / tổng câu; không phải IELTS band score",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "button",
+          "title": "Xem lịch sử",
+          "route": "lesson_history",
+          "accent": "yellow",
+          "appearance": "ghost"
+        }
+      ],
+      "actions": [],
+      "parent": "progress",
+      "requirements": [
+        "PRG-01",
+        "LES-R03"
+      ]
+    },
+    {
+      "id": "progress_streak",
+      "title": "Chuỗi ngày học",
+      "group": "Tiến độ",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "streak",
+          "title": "1 ngày liên tiếp",
+          "body": "Ngày hoàn thành lesson hoặc lượt ôn hợp lệ"
+        },
+        {
+          "type": "card",
+          "title": "Quy tắc",
+          "body": "Đếm theo local_date đã chốt lúc hoạt động; đổi múi giờ không tính lại",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "button",
+          "title": "Tiến độ",
+          "route": "progress",
+          "accent": "yellow",
+          "appearance": "ghost"
+        }
+      ],
+      "actions": [],
+      "parent": "progress",
+      "requirements": [
+        "PRG-R05"
+      ]
+    },
+    {
+      "id": "progress_heatmap",
+      "title": "Biểu đồ hoạt động",
+      "group": "Tiến độ",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "heatmap",
+          "title": "5 tuần vừa qua",
+          "body": "Cường độ hoạt động học theo ngày"
+        },
+        {
+          "type": "card",
+          "title": "Hoạt động hợp lệ",
+          "body": "Hoàn thành lesson hoặc lượt ôn",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "button",
+          "title": "Quay về tiến độ",
+          "route": "progress",
+          "accent": "yellow",
+          "appearance": "ghost"
+        }
+      ],
+      "actions": [],
+      "parent": "progress",
+      "requirements": [
+        "PRG-02"
+      ]
+    },
+    {
+      "id": "progress_empty",
+      "title": "Chưa có hoạt động",
+      "group": "Tiến độ",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Hành trình bắt đầu từ bài đầu tiên",
+          "subtitle": "Tiến độ sẽ cập nhật sau khi hoàn thành lesson",
+          "accent": "yellow"
+        },
+        {
+          "type": "button",
+          "title": "Bắt đầu học",
+          "route": "home",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "parent": "progress",
+      "requirements": [],
+      "screenKind": "response_state"
+    },
+    {
+      "id": "progress_points",
+      "title": "Sổ điểm học tập",
+      "group": "Tiến độ",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Điểm học tập",
+          "subtitle": "Không quy đổi thành band IELTS",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Lesson",
+          "body": "5–8 từ × 2/3/4/5 điểm mỗi từ tùy band; trần 100/ngày",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "card",
+          "title": "Ôn tập",
+          "body": "2 điểm cho mỗi mốc D+1/D+3/D+7 đúng hạn",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "button",
+          "title": "Xem thứ hạng",
+          "route": "ranking",
+          "accent": "yellow",
+          "appearance": "ghost"
+        }
+      ],
+      "actions": [],
+      "parent": "progress",
+      "requirements": [
+        "PRG-R01",
+        "PRG-R02"
+      ]
+    },
+    {
+      "id": "ranking_month",
+      "title": "Bảng xếp hạng tháng",
+      "group": "Xếp hạng",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Xếp hạng tháng",
+          "subtitle": "Tháng dương lịch theo giờ Việt Nam",
+          "accent": "yellow"
+        },
+        {
+          "type": "podium",
+          "title": "Top 3",
+          "body": "Xếp điểm học tập đã cấp, bằng điểm đồng hạng"
+        },
+        {
+          "type": "button",
+          "title": "Bảng tuần",
+          "route": "ranking",
+          "accent": "yellow",
+          "appearance": "ghost"
+        }
+      ],
+      "actions": [],
+      "parent": "ranking",
+      "requirements": [
+        "PRG-07"
+      ]
+    },
+    {
+      "id": "ranking_alltime",
+      "title": "Bảng xếp hạng toàn thời gian",
+      "group": "Xếp hạng",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Xếp hạng tích lũy",
+          "subtitle": "Không dựa vào điểm nghe",
+          "accent": "yellow"
+        },
+        {
+          "type": "podium",
+          "title": "Top 3",
+          "body": "Tỷ lệ nghe lần đầu chỉ là tham khảo"
+        },
+        {
+          "type": "button",
+          "title": "Bảng tuần",
+          "route": "ranking",
+          "accent": "yellow",
+          "appearance": "ghost"
+        }
+      ],
+      "actions": [],
+      "parent": "ranking",
+      "requirements": [
+        "PRG-05"
+      ]
+    },
+    {
+      "id": "ranking_no_listening",
+      "title": "Chưa có tỷ lệ nghe",
+      "group": "Xếp hạng",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Chưa có kết quả nghe lần đầu",
+          "subtitle": "Kỳ này chỉ có điểm ôn → tỷ lệ nghe hiển thị “—”",
+          "accent": "yellow"
+        },
+        {
+          "type": "button",
+          "title": "Trở lại bảng xếp hạng",
+          "route": "ranking",
+          "accent": "yellow",
+          "appearance": "ghost"
+        }
+      ],
+      "actions": [],
+      "parent": "ranking",
+      "requirements": [
+        "PRG-R10"
+      ],
+      "screenKind": "response_state"
+    },
+    {
+      "id": "ranking_report_success",
+      "title": "Đã nhận báo cáo",
+      "group": "Xếp hạng",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Đã gửi báo cáo tên",
+          "subtitle": "Không công khai email / SĐT / user ID",
+          "accent": "yellow"
+        },
+        {
+          "type": "button",
+          "title": "Quay về xếp hạng",
+          "route": "ranking",
+          "accent": "yellow",
+          "appearance": "ghost"
+        }
+      ],
+      "actions": [],
+      "parent": "report_name",
+      "requirements": [
+        "PRG-06"
+      ],
+      "screenKind": "response_state"
+    },
+    {
+      "id": "profile_name_cooldown",
+      "title": "Chưa đến hạn đổi tên",
+      "group": "Hồ sơ",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Chưa thể đổi tên",
+          "subtitle": "Có thể đổi tiếp sau next_change_at do máy chủ cung cấp",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Quy định",
+          "body": "Đổi thành công tối đa một lần / 720 giờ UTC",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "button",
+          "title": "Hồ sơ",
+          "route": "profile",
+          "accent": "yellow",
+          "appearance": "ghost"
+        }
+      ],
+      "actions": [],
+      "parent": "profile_edit",
+      "requirements": [
+        "ONB-R03"
+      ],
+      "screenKind": "response_state"
+    },
+    {
+      "id": "preferences_saved",
+      "title": "Đã cập nhật lựa chọn",
+      "group": "Hồ sơ",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Đã lưu band/chủ đề",
+          "subtitle": "Không xóa điểm, bài học hay lịch ôn cũ",
+          "accent": "mint"
+        },
+        {
+          "type": "button",
+          "title": "Về hồ sơ",
+          "route": "profile",
+          "accent": "yellow",
+          "appearance": "ghost"
+        }
+      ],
+      "actions": [],
+      "parent": "preferences",
+      "requirements": [
+        "ONB-02"
+      ],
+      "screenKind": "response_state"
+    },
+    {
+      "id": "notification_denied",
+      "title": "Quyền thông báo đã tắt",
+      "group": "Hồ sơ",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Bạn vẫn ôn được bình thường",
+          "subtitle": "Nhắc ôn vẫn hiện trong ứng dụng",
+          "accent": "yellow"
+        },
+        {
+          "type": "button",
+          "title": "Về ôn tập",
+          "route": "review",
+          "accent": "yellow",
+          "appearance": "ghost"
+        }
+      ],
+      "actions": [],
+      "parent": "notification_settings",
+      "requirements": [
+        "REV-R05"
+      ],
+      "screenKind": "response_state"
+    },
+    {
+      "id": "profile_logout_confirm",
+      "title": "Đăng xuất?",
+      "group": "Hồ sơ",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Xác nhận đăng xuất",
+          "subtitle": "Bản đã lưu máy chủ vẫn được giữ; nháp cục bộ gắn tài khoản",
+          "accent": "yellow"
+        },
+        {
+          "type": "button",
+          "title": "Hủy",
+          "route": "profile",
+          "accent": "yellow",
+          "appearance": "ghost"
+        },
+        {
+          "type": "button",
+          "title": "Đăng xuất",
+          "route": "welcome",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "parent": "profile",
+      "requirements": [
+        "LES-R04"
+      ]
+    },
+    {
+      "id": "admin_dashboard",
+      "title": "Quản trị nội dung",
+      "group": "Admin",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Content Studio",
+          "subtitle": "Chỉ tài khoản có quyền admin",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Chủ đề",
+          "body": "Tạo / sửa / ẩn / sắp xếp",
+          "route": "admin_topics",
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "card",
+          "title": "Lesson",
+          "body": "Bản nháp, đã xuất bản và phiên bản",
+          "route": "admin_lesson_list",
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "card",
+          "title": "Báo cáo & kiểm duyệt",
+          "body": "Cờ bất thường và báo cáo tên",
+          "route": "admin_audit",
+          "tag": "",
+          "accent": "mint"
+        }
+      ],
+      "actions": [],
+      "parent": "profile",
+      "requirements": [
+        "CNT-01",
+        "CNT-02",
+        "PRG-08"
+      ]
+    },
+    {
+      "id": "admin_lesson_list",
+      "title": "Danh sách lesson",
+      "group": "Admin",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Quản lý lesson",
+          "subtitle": "Lọc theo topic, band, trạng thái",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Finance — Part 1",
+          "body": "Draft · 7 từ",
+          "route": "admin_editor",
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "card",
+          "title": "Finance — Part 2",
+          "body": "Published · 6 từ",
+          "route": "admin_published",
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "button",
+          "title": "Tạo lesson",
+          "route": "admin_editor",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "parent": "admin_dashboard",
+      "requirements": [
+        "CNT-02"
+      ]
+    },
+    {
+      "id": "admin_topic_edit",
+      "title": "Tạo / sửa chủ đề",
+      "group": "Admin",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Chủ đề mới",
+          "subtitle": "Quản lý tên, mô tả, thứ tự, trạng thái",
+          "accent": "yellow"
+        },
+        {
+          "type": "field",
+          "title": "Tên chủ đề",
+          "hint": "Nhập thông tin"
+        },
+        {
+          "type": "field",
+          "title": "Mô tả",
+          "hint": "Nhập thông tin"
+        },
+        {
+          "type": "button",
+          "title": "Lưu chủ đề",
+          "route": "admin_topics",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "parent": "admin_topics",
+      "requirements": [
+        "CNT-01"
+      ]
+    },
+    {
+      "id": "admin_vocab_edit",
+      "title": "Soạn từ vựng",
+      "group": "Admin",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "VocabularyItem",
+          "subtitle": "5–8 từ/cụm từ mỗi lesson",
+          "accent": "yellow"
+        },
+        {
+          "type": "field",
+          "title": "Headword / accepted_forms[]",
+          "hint": "Nhập thông tin"
+        },
+        {
+          "type": "field",
+          "title": "Description tiếng Việt theo ngữ cảnh",
+          "hint": "Nhập thông tin"
+        },
+        {
+          "type": "field",
+          "title": "IPA / audio phát âm",
+          "hint": "Nhập thông tin"
+        },
+        {
+          "type": "field",
+          "title": "Câu mẫu",
+          "hint": "Nhập thông tin"
+        },
+        {
+          "type": "field",
+          "title": "Hội thoại ngắn",
+          "hint": "Nhập thông tin"
+        },
+        {
+          "type": "field",
+          "title": "Tình huống dùng từ",
+          "hint": "Nhập thông tin"
+        },
+        {
+          "type": "button",
+          "title": "Lưu từ vựng",
+          "route": "admin_editor",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "parent": "admin_editor",
+      "requirements": [
+        "CNT-03"
+      ]
+    },
+    {
+      "id": "admin_audio_tts",
+      "title": "Tạo và duyệt audio",
+      "group": "Admin",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Audio/TTS",
+          "subtitle": "Tạo từ văn bản do admin viết, không tạo nội dung lesson",
+          "accent": "yellow"
+        },
+        {
+          "type": "field",
+          "title": "Văn bản nguồn",
+          "hint": "Nhập thông tin"
+        },
+        {
+          "type": "field",
+          "title": "Giọng đọc / nguồn upload",
+          "hint": "Nhập thông tin"
+        },
+        {
+          "type": "card",
+          "title": "Điều kiện xuất bản",
+          "body": "Tệp hợp lệ, thời lượng > 0, được admin nghe và duyệt",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "button",
+          "title": "Duyệt audio",
+          "route": "admin_editor",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "parent": "admin_editor",
+      "requirements": [
+        "CNT-08",
+        "CNT-R09"
+      ]
+    },
+    {
+      "id": "admin_listening_edit",
+      "title": "Soạn bài nghe",
+      "group": "Admin",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "ListeningTask",
+          "subtitle": "Audio chứa từ mục tiêu, đáp án và transcript nội bộ",
+          "accent": "yellow"
+        },
+        {
+          "type": "field",
+          "title": "Audio đã duyệt",
+          "hint": "Nhập thông tin"
+        },
+        {
+          "type": "field",
+          "title": "Transcript (ẩn đến sau nộp)",
+          "hint": "Nhập thông tin"
+        },
+        {
+          "type": "field",
+          "title": "Câu hỏi hiểu nội dung",
+          "hint": "Nhập thông tin"
+        },
+        {
+          "type": "field",
+          "title": "Điền khuyết, đáp án, biến thể",
+          "hint": "Nhập thông tin"
+        },
+        {
+          "type": "field",
+          "title": "Giải thích",
+          "hint": "Nhập thông tin"
+        },
+        {
+          "type": "button",
+          "title": "Lưu bài nghe",
+          "route": "admin_editor",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "parent": "admin_editor",
+      "requirements": [
+        "CNT-04"
+      ]
+    },
+    {
+      "id": "admin_writing_edit",
+      "title": "Soạn đề viết",
+      "group": "Admin",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "WritingPrompts",
+          "subtitle": "2–3 tình huống riêng ứng với 2–3 từ khác nhau",
+          "accent": "yellow"
+        },
+        {
+          "type": "field",
+          "title": "Từ/cụm từ mục tiêu",
+          "hint": "Nhập thông tin"
+        },
+        {
+          "type": "field",
+          "title": "Bối cảnh cụ thể",
+          "hint": "Nhập thông tin"
+        },
+        {
+          "type": "field",
+          "title": "Vai trò/người nhận hoặc mục đích",
+          "hint": "Nhập thông tin"
+        },
+        {
+          "type": "field",
+          "title": "Điều cần diễn đạt",
+          "hint": "Nhập thông tin"
+        },
+        {
+          "type": "button",
+          "title": "Lưu đề viết",
+          "route": "admin_editor",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "parent": "admin_editor",
+      "requirements": [
+        "CNT-05"
+      ]
+    },
+    {
+      "id": "admin_preview",
+      "title": "Xem trước lesson",
+      "group": "Admin",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Bản xem trước",
+          "subtitle": "Admin xem được cả đáp án/transcript",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Kiểm tra",
+          "body": "Từ → nghe → viết; kiểm tra trường bắt buộc",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "button",
+          "title": "Kiểm tra xuất bản",
+          "route": "admin_publish_check",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "parent": "admin_editor",
+      "requirements": [
+        "CNT-06",
+        "CNT-07"
+      ]
+    },
+    {
+      "id": "admin_publish_check",
+      "title": "Kiểm tra xuất bản",
+      "group": "Admin",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Kiểm tra dữ liệu lesson",
+          "subtitle": "Chặn xuất bản nếu thiếu yêu cầu",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "5–8 từ",
+          "body": "Nghĩa Việt, IPA, audio, ví dụ, hội thoại, tình huống",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "card",
+          "title": "Bài nghe",
+          "body": "Audio, transcript, câu hỏi, điền khuyết, đáp án",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "card",
+          "title": "Bài viết",
+          "body": "2–3 tình huống riêng, từ mục tiêu hợp lệ",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "button",
+          "title": "Xác nhận xuất bản",
+          "route": "admin_published",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "parent": "admin_editor",
+      "requirements": [
+        "CNT-R02"
+      ]
+    },
+    {
+      "id": "admin_publish_error",
+      "title": "Lesson chưa hợp lệ",
+      "group": "Admin",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Chưa thể xuất bản",
+          "subtitle": "Hiển thị chính xác trường thiếu",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Lỗi mẫu",
+          "body": "Vocab 4 chưa có IPA; audio chưa duyệt; thiếu WritingPrompt 2",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "button",
+          "title": "Sửa lesson",
+          "route": "admin_editor",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "parent": "admin_publish_check",
+      "requirements": [
+        "AC-CNT-01"
+      ],
+      "screenKind": "response_state"
+    },
+    {
+      "id": "admin_published",
+      "title": "Phiên bản đã xuất bản",
+      "group": "Admin",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Đã xuất bản",
+          "subtitle": "Lưu người thao tác, thời gian và version",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Phiên bản",
+          "body": "Lượt cũ giữ snapshot; lượt mới nhận phiên bản mới",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "button",
+          "title": "Quay lại danh sách",
+          "route": "admin_lesson_list",
+          "accent": "yellow",
+          "appearance": "ghost"
+        },
+        {
+          "type": "button",
+          "title": "Ẩn lesson",
+          "route": "admin_hide_confirm",
+          "accent": "yellow"
+        },
+        {
+          "type": "button",
+          "title": "Thu hồi phiên bản lỗi",
+          "route": "admin_revoke",
+          "accent": "yellow",
+          "appearance": "ghost"
+        }
+      ],
+      "actions": [],
+      "parent": "admin_lesson_list",
+      "requirements": [
+        "CNT-R05"
+      ],
+      "screenKind": "response_state"
+    },
+    {
+      "id": "admin_hide_confirm",
+      "title": "Ẩn lesson?",
+      "group": "Admin",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Xác nhận ẩn lesson",
+          "subtitle": "Chặn lượt học mới nhưng không xóa điểm/học sử",
+          "accent": "yellow"
+        },
+        {
+          "type": "button",
+          "title": "Hủy",
+          "route": "admin_published",
+          "accent": "yellow",
+          "appearance": "ghost"
+        },
+        {
+          "type": "button",
+          "title": "Xác nhận ẩn",
+          "route": "admin_lesson_list",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "parent": "admin_published",
+      "requirements": [
+        "CNT-R05"
+      ]
+    },
+    {
+      "id": "admin_revoke",
+      "title": "Thu hồi phiên bản",
+      "group": "Admin",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Thu hồi vì lỗi nghiêm trọng",
+          "subtitle": "Nhập lý do và xác nhận riêng",
+          "accent": "yellow"
+        },
+        {
+          "type": "field",
+          "title": "Lý do thu hồi",
+          "hint": "Nhập thông tin"
+        },
+        {
+          "type": "card",
+          "title": "Ảnh hưởng",
+          "body": "Ngừng phát nội dung lỗi và nhắc ôn; không xóa điểm/lịch sử",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "button",
+          "title": "Xác nhận thu hồi",
+          "route": "admin_lesson_list",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "parent": "admin_published",
+      "requirements": [
+        "CNT-09"
+      ]
+    },
+    {
+      "id": "admin_audit",
+      "title": "Rà soát hoạt động",
+      "group": "Admin",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Tín hiệu cần kiểm tra",
+          "subtitle": "Không tự xử phạt learner",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Hoàn thành quá nhanh",
+          "body": "Đánh dấu theo thời lượng audio + 30 giây",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "card",
+          "title": "Đổi múi giờ",
+          "body": "Hơn 2 lần trong 7 ngày",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "card",
+          "title": "Tên bị báo cáo",
+          "body": "Chỉ admin quyết định ẩn/bỏ ẩn",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "button",
+          "title": "Xem báo cáo tên",
+          "route": "admin_name_reports",
+          "accent": "yellow",
+          "appearance": "ghost"
+        }
+      ],
+      "actions": [],
+      "parent": "admin_dashboard",
+      "requirements": [
+        "PRG-08"
+      ]
+    },
+    {
+      "id": "admin_name_reports",
+      "title": "Báo cáo tên hiển thị",
+      "group": "Admin",
+      "tab": null,
+      "subtitle": "",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": "VERTICAL",
+      "blocks": [
+        {
+          "type": "hero",
+          "title": "Kiểm duyệt tên",
+          "subtitle": "Tài khoản vẫn giữ điểm nếu tên bị ẩn",
+          "accent": "yellow"
+        },
+        {
+          "type": "card",
+          "title": "Báo cáo mẫu",
+          "body": "Ẩn tên → dùng public alias ngẫu nhiên",
+          "route": null,
+          "tag": "",
+          "accent": "mint"
+        },
+        {
+          "type": "button",
+          "title": "Xác nhận xử lý",
+          "route": "admin_audit",
+          "accent": "yellow"
+        }
+      ],
+      "actions": [],
+      "parent": "admin_audit",
+      "requirements": [
+        "PRG-06"
+      ]
+    }
+  ],
+  "flows": [
+    [
+      "welcome",
+      "onboarding_band",
+      "onboarding_topics",
+      "onboarding_name",
+      "home"
+    ],
+    [
+      "home",
+      "lesson_detail",
+      "vocab_1",
+      "vocab_2",
+      "vocab_3",
+      "vocab_4",
+      "vocab_5",
+      "vocab_6",
+      "vocab_7",
+      "listening",
+      "listening_result",
+      "writing",
+      "lesson_complete",
+      "writing_feedback",
+      "writing_revision"
+    ],
+    [
+      "review",
+      "review_detail",
+      "review_vocab",
+      "review_listening",
+      "review_writing",
+      "review_result"
+    ],
+    [
+      "progress",
+      "activity"
+    ],
+    [
+      "progress",
+      "lesson_history",
+      "lesson_history_detail"
+    ],
+    [
+      "ranking",
+      "report_name"
+    ],
+    [
+      "profile",
+      "preferences"
+    ],
+    [
+      "profile",
+      "notification_settings"
+    ],
+    [
+      "profile",
+      "profile_edit"
+    ]
+  ],
+  "interactionNotes": [
+    "Screens are assembled from editable Figma frames and text nodes",
+    "Response-state frames are design references; the application chooses them from validation, request status and API data, not navigation buttons on primary screens",
+    "Each standard screen has a vertically scrollable content viewport and fixed bottom navigation for 5 main tabs",
+    "Prototype links are generated from route fields in design.json; they illustrate navigation, not backend behavior",
+    "The selected band is content preference, not verified IELTS level",
+    "No pre-submission listening transcript/answers",
+    "Example content is illustrative, not production lesson content",
+    "Admin entry is role-gated and writing feedback actions appear only when the feedback job is ready; neither is shown on the learner/pending default frames"
+  ],
+  "mergePolicy": "Import all 113 screens on a new page; never delete, replace, or modify existing pages."
+}

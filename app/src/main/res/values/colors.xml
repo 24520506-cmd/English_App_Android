@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="login_bg">#151932</color>
+    <color name="login_surface">#202C50</color>
+    <color name="login_surface_light">#2B3964</color>
+    <color name="login_border">#536693</color>
+    <color name="login_text">#F6F8FF</color>
+    <color name="login_muted">#B9C3DE</color>
+    <color name="login_mint">#79E6C5</color>
+    <color name="login_yellow">#F7CB58</color>
+    <color name="login_dark_text">#11223C</color>
+    <color name="login_error">#FFADB8</color>
+    <color name="reg_bg">#151A33</color>
+    <color name="reg_surface">#242D50</color>
+    <color name="reg_border">#465681</color>
+    <color name="reg_white">#F5F7FF</color>
+    <color name="reg_muted">#A7B2D0</color>
+    <color name="reg_mint">#77E5C4</color>
+    <color name="reg_yellow">#F8C957</color>
+    <color name="reg_dark">#141A31</color>
+    <color name="reg_error">#FF919F</color>
+</resources>

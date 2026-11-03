@@ -1,0 +1,3 @@
+package com.example.english_app;
+import android.content.Context;import android.graphics.*;import android.util.AttributeSet;import android.view.View;
+public class ProgressHeatmapView extends View {private Paint p=new Paint(3);public ProgressHeatmapView(Context c,AttributeSet a){super(c,a);}protected void onDraw(Canvas c){super.onDraw(c);int cols=7,rows=5;float gap=6*getResources().getDisplayMetrics().density;float size=Math.min((getWidth()-gap*(cols-1))/cols,(getHeight()-gap*(rows-1))/rows);float left=(getWidth()-(size*cols+gap*(cols-1)))/2;for(int row=0;row<rows;row++)for(int col=0;col<cols;col++){int x=(row*13+col*7)%11;p.setColor(x<3?0xFF79E8C5:x<7?0xFFAEA8FF:0xFF35436A);float l=left+col*(size+gap),top=row*(size+gap);c.drawRoundRect(l,top,l+size,top+size,5,5,p);}}}

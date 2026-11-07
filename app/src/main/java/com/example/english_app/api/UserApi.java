@@ -13,13 +13,21 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 
 public interface UserApi {
-    @POST("users") Call<Account> register(@Body RegisterRequest request);
-    @POST("auth/login") Call<Tokens> login(@Body LoginRequest request);
-    @POST("auth/refresh") Call<Tokens> refresh(@Body Map<String, String> request);
-    @GET("auth/session") Call<SessionResult> session(@Header("Authorization") String bearer);
     @GET("me") Call<Account> profile(@Header("Authorization") String bearer);
-    @POST("auth/logout") Call<Void> logout(@Header("Authorization") String bearer);
-    @POST("auth/activity") Call<Void> activity(@Header("Authorization") String bearer);
+
+    // These protected verification and contact-management routes require the active bearer token.
+    @POST("me/email-verifications") Call<EmailOtpChallenge> startEmailVerification(
+            @Header("Authorization") String bearer);
+    @POST("me/email-verifications/{challengeId}/resend") Call<EmailOtpChallenge> resendEmailVerification(
+            @Header("Authorization") String bearer, @Path("challengeId") String challengeId);
+    @POST("me/email-verifications/{challengeId}/verify") Call<EmailVerificationResult> verifyEmail(
+            @Header("Authorization") String bearer, @Path("challengeId") String challengeId,
+            @Body OtpCodeRequest request);
+    @POST("me/contact-changes") Call<com.google.gson.JsonObject> startContactChange(
+            @Header("Authorization") String bearer, @Body ContactChangeRequest request);
+    @POST("me/contact-changes/{changeId}/verify") Call<Account> verifyContactChange(
+            @Header("Authorization") String bearer, @Path("changeId") String changeId,
+            @Body ContactChangeVerifyRequest request);
     @PATCH("me") Call<Account> updateProfile(@Header("Authorization") String bearer,
                                              @Body UpdateProfileRequest request);
     @GET("me/preferences") Call<LearnerPreferences> preferences(
@@ -32,22 +40,6 @@ public interface UserApi {
     @DELETE("me/sessions/{session_id}") Call<Void> revokeSession(@Header("Authorization") String bearer,
                                                                   @Path("session_id") String sessionId);
     @POST("me/sessions/revoke-all") Call<Void> revokeAllSessions(@Header("Authorization") String bearer);
-
-    final class RegisterRequest {
-        public final String username, password, email, phone;
-        public RegisterRequest(String username, String password, String email, String phone) {
-            this.username = username; this.password = password; this.email = email; this.phone = phone;
-        }
-    }
-
-    final class LoginRequest {
-        public final String username, password, device_label, platform;
-        public LoginRequest(String username, String password, String deviceLabel) {
-            this.username = username; this.password = password;
-            this.device_label = deviceLabel; this.platform = "android";
-        }
-    }
-
     final class Account {
         public String user_id, username, role, status;
         public Profile profile;
@@ -65,6 +57,15 @@ public interface UserApi {
 
     final class Contact {
         public String masked_value, verified_at;
+    }
+
+    final class EmailOtpChallenge {
+        public String challenge_id, masked_email, resend_after_at;
+    }
+
+    final class EmailVerificationResult {
+        public boolean verified;
+        public String email;
     }
 
     final class UpdateProfileRequest {
@@ -94,6 +95,25 @@ public interface UserApi {
         }
     }
 
+    final class OtpCodeRequest {
+        public final String code;
+        public OtpCodeRequest(String code) { this.code = code; }
+    }
+
+    final class ContactChangeRequest {
+        public final String kind, new_value, current_password;
+        public ContactChangeRequest(String kind, String newValue, String currentPassword) {
+            this.kind = kind;
+            this.new_value = newValue;
+            this.current_password = currentPassword;
+        }
+    }
+
+    final class ContactChangeVerifyRequest {
+        public final String otp;
+        public ContactChangeVerifyRequest(String otp) { this.otp = otp; }
+    }
+
     final class Session {
         public String session_id, device_label, platform, created_at, last_activity_at,
                 idle_expires_at, absolute_expires_at;
@@ -102,17 +122,6 @@ public interface UserApi {
 
     final class SessionsResult {
         public List<Session> sessions;
-    }
-
-    final class Tokens {
-        public String access_token, access_expires_at, refresh_token;
-        public Session session;
-        public Account user;
-    }
-
-    final class SessionResult {
-        public Session session;
-        public Account user;
     }
 
     final class ErrorBody {

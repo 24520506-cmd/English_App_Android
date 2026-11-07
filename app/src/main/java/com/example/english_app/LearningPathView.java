@@ -16,12 +16,14 @@ public class LearningPathView extends View {
     private final PathMeasure measure = new PathMeasure();
     private final float[] pos = new float[2];
     private final float[] tangent = new float[2];
-    private final float[] xs = {0.25f,0.72f};
-    private final float[] ys = {0.25f,0.75f};
+    private float[] xs = {0.25f,0.72f};
+    private float[] ys = {0.25f,0.75f};
     private ValueAnimator pulse;
     private float phase = 0f;
     private boolean firstLessonCompleted;
     private boolean secondLessonCompleted;
+    private boolean lessonAvailable;
+    private int activeLessonIndex;
     private final int mint = Color.rgb(117, 229, 194);
     private final int gold = Color.rgb(250, 199, 81);
     private final int purple = Color.rgb(113, 133, 215);
@@ -34,12 +36,41 @@ public class LearningPathView extends View {
     public void setOnLessonClickListener(OnLessonClickListener l) { listener=l; }
     public void setFirstLessonCompleted(boolean completed) {
         firstLessonCompleted = completed;
+        activeLessonIndex = completed ? 1 : 0;
         invalidate();
     }
     public void setSecondLessonCompleted(boolean completed) {
         secondLessonCompleted = completed;
+        if (completed) activeLessonIndex = -1;
+        else if (firstLessonCompleted) activeLessonIndex = 1;
         invalidate();
     }
+    public void setLessonAvailable(boolean available) {
+        lessonAvailable = available;
+        invalidate();
+    }
+    public void setLessonCount(int count) {
+        int safeCount = Math.max(0, count);
+        xs = new float[safeCount];
+        ys = new float[safeCount];
+        if (safeCount == 1) {
+            xs[0] = 0.5f;
+            ys[0] = 0.5f;
+        } else if (safeCount > 1) {
+            for (int i = 0; i < safeCount; i++) {
+                xs[i] = i % 2 == 0 ? 0.25f : 0.72f;
+                ys[i] = 0.14f + 0.72f * i / (safeCount - 1f);
+            }
+        }
+        activeLessonIndex = safeCount == 0 ? -1
+            : activeLessonIndex < 0 ? 0 : Math.min(activeLessonIndex, safeCount - 1);
+        invalidate();
+    }
+    public void setActiveLessonIndex(int index) {
+        activeLessonIndex = index >= 0 && index < xs.length ? index : -1;
+        invalidate();
+    }
+
     @Override protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         if (android.provider.Settings.Global.getFloat(getContext().getContentResolver(), "animator_duration_scale", 1f) != 0f) startMotion();
@@ -61,34 +92,41 @@ public class LearningPathView extends View {
         float w=getWidth(),h=getHeight(); if(w<=0||h<=0)return;
         float[] x=new float[xs.length],y=new float[ys.length];
         for(int i=0;i<x.length;i++){x[i]=xs[i]*w;y[i]=ys[i]*h;}
-        path.reset();path.moveTo(x[0],y[0]);
-        for(int i=0;i<x.length-1;i++) {
-            float mid=(y[i]+y[i+1])/2;
-            path.cubicTo(x[i],mid,x[i+1],mid,x[i+1],y[i+1]);
+        if (x.length == 0) return;
+        if (x.length > 1) {
+            path.reset();path.moveTo(x[0],y[0]);
+            for(int i=0;i<x.length-1;i++) {
+                float mid=(y[i]+y[i+1])/2;
+                path.cubicTo(x[i],mid,x[i+1],mid,x[i+1],y[i+1]);
+            }
+            paint.reset();paint.setAntiAlias(true);paint.setStyle(Paint.Style.STROKE);
+            paint.setStrokeCap(Paint.Cap.ROUND);paint.setStrokeJoin(Paint.Join.ROUND);
+            paint.setColor(Color.rgb(42,52,93));paint.setStrokeWidth(dp(32));canvas.drawPath(path,paint);
+            paint.setColor(Color.rgb(60,75,130));paint.setStrokeWidth(dp(3));canvas.drawPath(path,paint);
+            // Highlight trail to lead the eye without distracting from the lesson nodes.
+            measure.setPath(path,false);float len=measure.getLength();
+            Path segment=new Path();measure.getSegment(Math.max(0,phase*len-dp(90)),phase*len,segment,true);
+            paint.setColor(mint);paint.setAlpha(120);paint.setStrokeWidth(dp(4));paint.setShadowLayer(dp(9),0,0,mint);canvas.drawPath(segment,paint);paint.clearShadowLayer();
+            measure.getPosTan(Math.max(0.001f,phase*len),pos,tangent);
+            paint.setStyle(Paint.Style.FILL);paint.setColor(mint);paint.setAlpha(90);paint.setShadowLayer(dp(18),0,0,mint);canvas.drawCircle(pos[0],pos[1],dp(7),paint);paint.clearShadowLayer();
+            paint.setAlpha(255);canvas.drawCircle(pos[0],pos[1],dp(3.5f),paint);
         }
-        paint.reset();paint.setAntiAlias(true);paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeCap(Paint.Cap.ROUND);paint.setStrokeJoin(Paint.Join.ROUND);
-        paint.setColor(Color.rgb(42,52,93));paint.setStrokeWidth(dp(32));canvas.drawPath(path,paint);
-        paint.setColor(Color.rgb(60,75,130));paint.setStrokeWidth(dp(3));canvas.drawPath(path,paint);
-        // Highlight trail to lead the eye without distracting from the lesson nodes.
-        measure.setPath(path,false);float len=measure.getLength();
-        Path segment=new Path();measure.getSegment(Math.max(0,phase*len-dp(90)),phase*len,segment,true);
-        paint.setColor(mint);paint.setAlpha(120);paint.setStrokeWidth(dp(4));paint.setShadowLayer(dp(9),0,0,mint);canvas.drawPath(segment,paint);paint.clearShadowLayer();
-        measure.getPosTan(Math.max(0.001f,phase*len),pos,tangent);
-        paint.setStyle(Paint.Style.FILL);paint.setColor(mint);paint.setAlpha(90);paint.setShadowLayer(dp(18),0,0,mint);canvas.drawCircle(pos[0],pos[1],dp(7),paint);paint.clearShadowLayer();
-        paint.setAlpha(255);canvas.drawCircle(pos[0],pos[1],dp(3.5f),paint);
         for(int i=0;i<x.length;i++)drawNode(canvas,x[i],y[i],i);
     }
     private void drawNode(Canvas c,float x,float y,int i){
-        boolean active=!secondLessonCompleted&&i==(firstLessonCompleted?1:0);float radius=dp(active?37:28);
+        boolean completed = lessonAvailable
+            && ((i == 0 && firstLessonCompleted) || (i == 1 && secondLessonCompleted));
+        boolean locked = !lessonAvailable || (i == 1 && !firstLessonCompleted);
+        boolean active = i == activeLessonIndex && !completed && !locked;
+        float radius=dp(active?37:28);
         paint.reset();paint.setAntiAlias(true);paint.setStyle(Paint.Style.FILL);
         if(active){paint.setColor(gold);paint.setShadowLayer(dp(19),0,0,gold);c.drawCircle(x,y,radius+dp(3),paint);paint.clearShadowLayer();}
-        paint.setColor(active?0xFF293460:0xFF2B375F);c.drawCircle(x,y,radius,paint);
-        paint.setStyle(Paint.Style.STROKE);paint.setStrokeWidth(dp(active?4:2));paint.setColor(active?gold:purple);c.drawCircle(x,y,radius,paint);
-        paint.setStyle(Paint.Style.FILL);paint.setColor(active?gold:mint);c.drawCircle(x,y,dp(active?12:8),paint);
+        paint.setColor(locked?0xFF202744:active?0xFF293460:0xFF2B375F);c.drawCircle(x,y,radius,paint);
+        paint.setStyle(Paint.Style.STROKE);paint.setStrokeWidth(dp(active?4:2));paint.setColor(locked?0xFF5A6380:active?gold:purple);c.drawCircle(x,y,radius,paint);
+        paint.setStyle(Paint.Style.FILL);paint.setColor(locked?0xFF68718C:active?gold:mint);c.drawCircle(x,y,dp(active?12:8),paint);
         paint.setTextAlign(Paint.Align.CENTER);paint.setTypeface(Typeface.create("sans-serif-medium",Typeface.BOLD));paint.setTextSize(dp(11));
-        paint.setColor(active?0xFF161B38:0xFF14213C);
-        c.drawText((i==0&&firstLessonCompleted)||(i==1&&secondLessonCompleted)?"✓":String.valueOf(i+1),x,y+dp(4),paint);
+        paint.setColor(locked?0xFFB5BCDA:active?0xFF161B38:0xFF14213C);
+        c.drawText(completed?"✓":String.valueOf(i+1),x,y+dp(4),paint);
     }
     @Override public boolean onTouchEvent(android.view.MotionEvent ev){
         if(ev.getAction()==android.view.MotionEvent.ACTION_UP){
@@ -96,7 +134,9 @@ public class LearningPathView extends View {
             for(int i=0;i<xs.length;i++){
                 float dx=ev.getX()-xs[i]*w,dy=ev.getY()-ys[i]*h;
                 if(dx*dx+dy*dy<dp(46)*dp(46)){
-                    performClick();if(listener!=null)listener.onLessonClick(i);return true;
+                    performClick();
+                    if (!lessonAvailable || (i == 1 && !firstLessonCompleted)) return true;
+                    if(listener!=null)listener.onLessonClick(i);return true;
                 }
             }
         }

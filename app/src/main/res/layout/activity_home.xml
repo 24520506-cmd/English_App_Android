@@ -25,22 +25,10 @@
                 <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="Ôn đúng ngày D+1, D+3, D+7 để ghi nhớ lâu hơn." android:textColor="#B8C4E1" android:textSize="13sp"/>
                 <TextView android:id="@+id/btnReview" android:layout_width="wrap_content" android:layout_height="48dp" android:gravity="center_vertical" android:text="Xem chi tiết  →" android:textColor="#78E4C5" android:textStyle="bold" android:textSize="14sp"/>
             </LinearLayout>
-            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:text="BẢN ĐỒ HỌC TẬP" android:textColor="#C4CDE8" android:textStyle="bold" android:textSize="12sp"/>
-            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="9dp" android:text="Personal Finance &amp; Budgeting" android:textColor="#F9CA58" android:textSize="23sp" android:textStyle="bold"/>
-            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:text="① Từ vựng  •  ② Nghe và viết" android:textColor="#B8C4E1" android:textSize="13sp"/>
-            <FrameLayout android:id="@+id/pathContainer" android:layout_width="match_parent" android:layout_height="480dp" android:layout_marginTop="6dp">
-                <com.example.english_app.LearningPathView android:id="@+id/learningPath" android:layout_width="match_parent" android:layout_height="match_parent" android:contentDescription="Bản đồ gồm hai nút bài học" />
-            </FrameLayout>
-            <LinearLayout android:id="@+id/feeling1Section" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="28dp" android:orientation="vertical">
-                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Feeling 1" android:textColor="#F9CA58" android:textSize="23sp" android:textStyle="bold"/>
-                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:text="Chạm vào các nút tròn để mở từng bài học" android:textColor="#B8C4E1" android:textSize="13sp"/>
-                <com.example.english_app.LearningPathView android:id="@+id/learningPathFeeling1" android:layout_width="match_parent" android:layout_height="360dp" android:layout_marginTop="6dp" android:contentDescription="Feeling 1 gồm hai nút bài học" />
-            </LinearLayout>
-            <LinearLayout android:id="@+id/feeling2Section" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="28dp" android:orientation="vertical">
-                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Feeling 2" android:textColor="#F9CA58" android:textSize="23sp" android:textStyle="bold"/>
-                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:text="Chạm vào các nút tròn để mở từng bài học" android:textColor="#B8C4E1" android:textSize="13sp"/>
-                <com.example.english_app.LearningPathView android:id="@+id/learningPathFeeling2" android:layout_width="match_parent" android:layout_height="360dp" android:layout_marginTop="6dp" android:contentDescription="Feeling 2 gồm hai nút bài học" />
-            </LinearLayout>
+            <TextView android:id="@+id/tvLessonsHeading" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:text="BÀI HỌC GỢI Ý" android:textColor="#C4CDE8" android:textStyle="bold" android:textSize="12sp" />
+            <TextView android:id="@+id/tvLessonsStatus" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Đang tải bài học…" android:textColor="#B8C4E1" android:textSize="14sp" />
+            <LinearLayout android:id="@+id/lessonListContainer" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" />
+            <LinearLayout android:id="@+id/topicJourneysContainer" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" />
         </LinearLayout>
     </ScrollView>
     <LinearLayout android:layout_width="match_parent" android:layout_height="64dp" android:orientation="horizontal" android:background="#202744" android:paddingStart="7dp" android:paddingEnd="7dp">

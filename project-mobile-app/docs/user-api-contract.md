@@ -3,11 +3,11 @@
 **Version:** 0.1  
 **Date:** 2026-10-25  
 **Owner:** Product/Engineering  
-**Status:** Draft contract; User API partly implemented in Spring Boot and Android Retrofit
+**Status:** Draft contract; backend owner supplied a VM smoke-test checklist on 2026-11-06; Android source integration is in progress and not yet runtime-verified
 
 ## 1. Purpose and authority
 
-The goal is to let the Java Android app authenticate a learner, restore the same session after process death, and manage that learner's account without relying on prototype navigation. Success means the backend and Retrofit client implement the same requests, responses, error states, and session rules, then pass `AC-USR-01`–`AC-USR-27` in [product-spec.md](product-spec.md). The backend currently implements `API-U01`–`API-U11` and `API-U23`; recovery and contact/provider verification remain open. Backend PostgreSQL integration tests have been written but have not yet run against a reachable database.
+The goal is to let the Java Android app authenticate a learner, restore the same session after process death, and manage that learner's account without relying on prototype navigation. Success means the backend and Retrofit client implement the same requests, responses, error states, and session rules, then pass `AC-USR-01`–`AC-USR-27` in [product-spec.md](product-spec.md). Backend owner reports registration/login, User/session/preferences routes, lesson list/detail/WAV, Flyway V13, and 12 lesson/audio rows smoke-tested on the VM. Recovery/contact/Google routes exist but their mail/SMS/OAuth providers are not configured. The Android source now calls the available learner routes; it still needs a Genymotion-reachable base URL for runtime verification.
 
 The product spec is authoritative for business behavior. Paths, field names, status codes, and JSON examples in this document are **proposed interface choices** because no backend implementation or existing endpoint contract is present in this workspace. If a proposed interface conflicts with a product rule, the product rule wins. This contract covers `USR`, `ACC`, `AUTH`, `SES`, `VER`, and `REC`; onboarding preferences and public ranking names have their own API domain.
 
@@ -17,7 +17,7 @@ The current app is native Android Java with XML layouts. `LoginActivity` current
 
 | ID | Rule | Priority | Source |
 |---|---|---|---|
-| API-01 | Base path is `/api/v1`. All production traffic uses HTTPS and JSON UTF-8, except the Google redirect callback. | Must | Proposed interface |
+| API-01 | Base path is `/api/v1`. Production base URL is `https://doangay.duckdns.org/api/v1/`. Production traffic uses HTTPS and JSON UTF-8, except the Google redirect callback. | Must | Backend owner, 2026-11-07 |
 | API-02 | Authenticated calls use `Authorization: Bearer <access_token>`. The server derives `user_id`, role, and session from the validated token and live session record, never a client supplied owner ID. | Must | `SES-03`–`SES-04`, `USR-08` |
 | API-03 | `access_token` expires 15 minutes after issue. Refresh rotates its token on every successful call; session idle and absolute limits are those in `SES-08`. Tokens are opaque to UI code. | Must | `SES-08`–`SES-15` |
 | API-04 | All timestamps are ISO 8601 UTC strings such as `2026-10-25T12:00:00Z`. IDs are opaque strings; clients do not infer account or session details from them. | Must | Proposed interface |
@@ -126,11 +126,11 @@ All paths below are relative to `/api/v1`. `public` means no bearer token; it do
 | API-U09 | `GET /me/sessions` | Self | `200` sessions | List live sessions; `USR-09`, `SES-01`–`SES-03`. |
 | API-U10 | `DELETE /me/sessions/{session_id}` | Self | `204` | Revoke owned session; `USR-10`, `SES-03`–`SES-04`. |
 | API-U11 | `POST /me/sessions/revoke-all` | Self | `204` | Atomically revoke all sessions; `USR-11`, `SES-05`. |
-| API-U12 | `POST /auth/password-reset/challenges` | Public | `202` generic result | Send Gmail email OTP or Zalo phone OTP; `USR-04`, `REC-01`–`REC-03`. |
+| API-U12 | `POST /auth/password-reset/challenges` | Public | `202` generic result | Send Gmail email OTP or phone SMS through eSMS; `USR-04`, `REC-01`–`REC-03`. |
 | API-U13 | `POST /auth/password-reset/challenges/{challenge_id}/resend` | Public | `202` generic result | Resend under shared channel/account/contact limits; `REC-03`, `REC-06`. |
 | API-U14 | `POST /auth/password-reset/challenges/{challenge_id}/verify` | Public | `200` reset grant | Consume OTP, grant 5 minute one time reset right; `REC-04`. |
 | API-U15 | `POST /auth/password-reset/complete` | Reset grant | `204` | Set password and atomically revoke all sessions and recovery challenges; `REC-05`. |
-| API-U16 | `POST /me/phone-verifications` | Self | `202` challenge | Send Zalo OTP to current saved phone; `USR-14`, `VER-04`–`VER-05`, `VER-07`. |
+| API-U16 | `POST /me/phone-verifications` | Self | `202` challenge | Send SMS OTP through eSMS to current saved phone; `USR-14`, `VER-04`–`VER-05`, `VER-07`. |
 | API-U17 | `POST /me/phone-verifications/{challenge_id}/resend` | Self | `202` challenge | Resend phone verification OTP; `VER-05`. |
 | API-U18 | `POST /me/phone-verifications/{challenge_id}/verify` | Self | `200` account | Consume OTP and set `phone_verified_at`; `USR-15`, `VER-06`. |
 | API-U19 | `POST /me/contact-changes` | Self + current password | `202` pending change | Start verified replacement of email/phone; `USR-16`, `VER-01`, `VER-08`. |
@@ -138,8 +138,10 @@ All paths below are relative to `/api/v1`. `public` means no bearer token; it do
 | API-U21 | `POST /me/google-link/start` | Self + current password | `200` authorization URL | Start Google link with backend state/nonce/PKCE; `USR-13`, `VER-01`–`VER-03`. |
 | API-U22 | `GET /auth/google-link/callback` | Google redirect | Redirect result | Backend exchanges code, verifies ID token, links Google `sub` only to initiating account; `VER-01`–`VER-03`, `VER-10`. |
 | API-U23 | `POST /auth/activity` | Self | `204` | Signal an active foreground interaction, at most once per minute while reading/typing without another request; `SES-09`–`SES-10`. |
+| API-T01 | `GET /topics` | Public | `200` `{ "topics": [{ "id", "label", "sort_order" }] }` | Return onboarding topics ordered by `sort_order`; the IDs are the values accepted in `PUT /me/preferences.topic_ids`. |
+| API-T02 | `GET /bands` | Public | `200` `{ "bands": [{ "id", "label", "sort_order" }] }` | Return selectable bands ordered by `sort_order`; `PUT /me/preferences.band` receives the selected band `id`. |
 
-There is no public admin registration endpoint. Admin creation/lock/unlock is an operational interface outside this first learner contract. Any admin route must still check `role` and live session at the backend. Google and Zalo are **verification channels only**, not login methods.
+There is no public admin registration endpoint. Admin creation/lock/unlock is an operational interface outside this first learner contract. Any admin route must still check `role` and live session at the backend. Google linking is not a login method in this contract.
 
 ## 6. Payloads and behavior by flow
 
@@ -197,7 +199,7 @@ Start request:
 }
 ```
 
-`channel` is `gmail` (email OTP) or `zalo` (phone OTP), never Google login or SMS. The user enters the actual email/phone. When more than one account could match a contact, `login_identifier` disambiguates it. The server uses only a **current saved** contact, even if unverified, and responds generically before verification: `{ "message": "Nếu thông tin phù hợp, mã khôi phục sẽ được gửi qua kênh đã chọn", "challenge_id": "opaque-handle" }`. The server issues an indistinguishable opaque handle for unmatched requests too; it cannot be used to obtain a valid OTP or reset grant. No recovery channel exists for an account with no saved contact.
+The recovery channel sends Gmail email OTP or phone SMS through eSMS, never Google login. The exact accepted `channel` enum is not described in the live OpenAPI schema and must be confirmed against backend code or a request example. The user enters the actual email/phone. When more than one account could match a contact, `login_identifier` disambiguates it. The server uses only a **current saved** contact, even if unverified, and responds generically before verification: `{ "message": "Nếu thông tin phù hợp, mã khôi phục sẽ được gửi qua kênh đã chọn", "challenge_id": "opaque-handle" }`. The server issues an indistinguishable opaque handle for unmatched requests too; it cannot be used to obtain a valid OTP or reset grant. No recovery channel exists for an account with no saved contact.
 
 Verify request is `{ "otp": "123456" }`. A successful `API-U14` response is `{ "reset_grant": "opaque-one-time-grant", "expires_at": "2026-10-25T12:05:00Z" }`. The grant is held only in memory and can call **only** `API-U15`; it cannot authorize `/me` or learning APIs. Complete request is `{ "reset_grant": "...", "new_password": "..." }`. Completion consumes the grant, changes the password, invalidates all recovery challenges from both channels, and revokes all sessions in one transaction. The app then asks for login; it does not log in automatically.
 
@@ -205,7 +207,7 @@ OTP rules: six digits, five minute life, at most five wrong attempts; resend aft
 
 ### 6.4 Contact and Google verification (`API-U16`–`API-U22`)
 
-Phone verification is for a saved current phone. The server sends a `phone_verification` OTP through Zalo; only that purpose can set `phone_verified_at`. The request returns `{ "challenge_id": "phv_...", "masked_phone": "*******678", "resend_after_at": "..." }`. Verification consumes the OTP atomically. Zalo delivery failure leaves the phone unverified.
+Phone verification is for a saved current phone. The server sends a `phone_verification` OTP through eSMS; only that purpose can set `phone_verified_at`. The request returns `{ "challenge_id": "phv_...", "masked_phone": "*******678", "resend_after_at": "..." }`. Verification consumes the OTP atomically. SMS delivery failure leaves the phone unverified.
 
 Changing a contact first checks the current password and creates a pending candidate. `API-U19` request is `{ "kind": "email", "new_value": "new@gmail.com", "current_password": "..." }` or the phone equivalent. The backend checks ownership uniqueness at start and completion, sends a purpose bound verification to the **new** contact, and keeps the old contact current until `API-U20` succeeds. The candidate cannot receive password reset OTP. Successful replacement invalidates old-contact recovery/verification requests and all sessions, then requires login. For a Gmail candidate the exact verification mechanism needs confirmation in §8; a saved non-Gmail email cannot be marked verified by Google.
 
@@ -217,7 +219,7 @@ The app sends this only while foregrounded and after a new active interaction du
 
 ## 7. Android Retrofit integration boundary
 
-The Java app has a `UserApi` Retrofit interface for implemented routes and DTOs for their responses. The current `AuthRepository` supports registration, login, refresh, profile read, and logout; other implemented backend routes are not wired to UI flows yet. An OkHttp interceptor and a single refresh coordinator remain planned for general authenticated requests. That coordinator must never retry a non-idempotent submission unless the endpoint explicitly supports an idempotency key. The app restores access only after `API-U03` or `API-U04` succeeds against the backend. Missing token, revoked/expired session, and refresh reuse clear local tokens; network failure keeps the refresh token but shows a retry state without claiming authentication succeeded.
+The Java app uses Retrofit through `UserApi` and `AuthRepository`. The repository/UI wire registration, login, refresh, profile/preferences, current-session and session-list reads, password change, logout, session revocation, activity signal, lesson list/detail, and authenticated WAV download. `UserApi` also declares the password reset, email/phone verification, contact change, and Google-link start endpoints; these are not yet called from UI. Live OpenAPI uses `code` for email/phone verification and `otp` for password recovery and contact-change verification. Onboarding topics use `GET /topics`; band selection uses `GET /bands` and sends its `id` in preferences and lesson filters. The live endpoint currently returns six bands; the product spec lists seven including `<5.5`, so that difference remains documented. Mutating requests are not retried after an uncertain network failure; received auth failures may refresh once and retry. Missing/revoked session clears local tokens, while network failure preserves the refresh token.
 
 This section describes the client boundary; the contract document itself does not provide a deployed endpoint.
 
@@ -225,16 +227,16 @@ This section describes the client boundary; the contract document itself does no
 
 | ID | Type | Item | Impact / action |
 |---|---|---|---|
-| DEC-U01 | Partly decided | Backend uses Java Spring Boot and PostgreSQL; deployment address is open. | Configure the production HTTPS address when deploying the server. |
+| DEC-U01 | Decided | Backend uses Java Spring Boot and PostgreSQL; production base URL is `https://doangay.duckdns.org/api/v1/`. | Use the public HTTPS URL in Android builds. |
 | DEC-U02 | Open decision | Username/password validation policy, allowed `profile` fields, and exact contact formats are not specified. | Agree rules before coding validation or FE error text. |
 | DEC-U03 | Open decision | Registration currently proposes **no automatic login**. | Confirm whether registration should instead establish a session; either choice must preserve `SES-01` and authenticated onboarding. |
 | DEC-U04 | Open decision | Native Android secure refresh-token storage choice and backup exclusion implementation. | Choose and test against `SES-13`–`SES-15`; Expo SecureStore wording in the spec is stale for this Java app. |
 | DEC-U05 | Open decision | Email verification for non-Gmail addresses and exact Gmail candidate-change sequence. | Specify before implementing `API-U19`/`API-U20`; never equate saved email with verified ownership. |
-| DEC-U06 | Open decision | Google OAuth mobile redirect URI, Android app link handling, and Zalo OA/provider credentials. | Needed to complete real provider integrations; mocks cannot prove delivery. |
+| DEC-U06 | Partly decided | Google callback must match `GOOGLE_CALLBACK_URI` and the URI registered with Google; app return uses `GOOGLE_MOBILE_RETURN_URI`. VPS OAuth/Gmail/eSMS credentials are unverified. | Confirm VPS configuration before claiming provider flows work end-to-end. |
 | DEC-U07 | Open decision | Backend retention of idempotency keys and audit events beyond the proposed minimum, plus privacy/retention policy. | Agree operational policy before production. |
 | RISK-U01 | High × High | Refresh race or reuse handling can wrongly sign users out or permit revoked sessions. | Atomic backend token-family updates; client single-flight refresh; test `AC-USR-03`, `AC-USR-11`, `AC-USR-23`, `AC-USR-27`. |
 | RISK-U02 | Medium × High | Login and recovery differences can reveal account existence. | Same login failure code/body behavior and generic preverification recovery result; test `AC-USR-25` and `AC-USR-17`. |
-| RISK-U03 | Medium × High | Zalo or Google integration may be unavailable or misconfigured. | Keep contact unverified; test real provider flow before release; test `AC-USR-07`–`AC-USR-10`. |
+| RISK-U03 | Medium × High | eSMS, Gmail, or Google OAuth may be unavailable or misconfigured. | Keep contact unverified; test real provider flow before release; test `AC-USR-07`–`AC-USR-10`. |
 
 ## 9. Acceptance map and next implementation slice
 
@@ -245,4 +247,4 @@ This section describes the client boundary; the contract document itself does no
 | Profile/contact | `AC-USR-07`–`AC-USR-10`, `AC-USR-20`–`AC-USR-24` | Contact stays pending until verified; another user's contact cannot be claimed. |
 | Recovery | `AC-USR-16`–`AC-USR-18`, `AC-USR-26` | OTP purpose/expiry/attempt limits hold; reset revokes both channels and all sessions. |
 
-The first executable slice after agreeing this contract is `POST /users`, `POST /auth/login`, `POST /auth/refresh`, `GET /me`, and `POST /auth/logout`, wired into the existing Java login/register UI. The remaining endpoints then extend the same session and error model.
+The next verification slice is to point Genymotion at the backend via `apiBaseUrl`, then check registration → login → Home/preferences → lesson list/detail/audio, password change, and session revocation against the deployed API.

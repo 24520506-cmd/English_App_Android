@@ -12,11 +12,12 @@ import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.EditText;
 import android.widget.TextView;
+import com.example.english_app.api.AuthApi;
 import com.example.english_app.api.AuthRepository;
 import com.example.english_app.api.UserApi;
 
 public class RegisterActivity extends Activity {
-    private EditText username, password, confirm;
+    private EditText username, password, confirm, email, phone;
     private TextView error;
     private boolean motion;
 
@@ -29,12 +30,14 @@ public class RegisterActivity extends Activity {
         username = findViewById(R.id.usernameInput);
         password = findViewById(R.id.passwordInput);
         confirm = findViewById(R.id.confirmInput);
+        email = findViewById(R.id.emailInput);
+        phone = findViewById(R.id.phoneInput);
         error = findViewById(R.id.errorMessage);
         View back = findViewById(R.id.backButton);
         View loginLink = findViewById(R.id.loginLink);
         back.setOnClickListener(v -> finish());
         loginLink.setOnClickListener(v -> finish());
-        setupFocus(username); setupFocus(password); setupFocus(confirm);
+        setupFocus(username); setupFocus(email); setupFocus(phone); setupFocus(password); setupFocus(confirm);
         toggleVisibility(password, findViewById(R.id.togglePassword));
         toggleVisibility(confirm, findViewById(R.id.toggleConfirm));
         TextView submit = findViewById(R.id.createAccountButton);
@@ -47,7 +50,7 @@ public class RegisterActivity extends Activity {
             String u = username.getText().toString().trim();
             String p = password.getText().toString();
             String c = confirm.getText().toString();
-            if (u.isEmpty() || p.isEmpty() || c.isEmpty()) { showError("Vui lòng nhập đầy đủ ba trường."); return; }
+            if (u.isEmpty() || p.isEmpty() || c.isEmpty()) { showError("Vui lòng nhập tên đăng nhập và mật khẩu."); return; }
             if (!p.equals(c)) { showError("Xác nhận mật khẩu chưa khớp."); confirm.requestFocus(); return; }
             if (!u.matches("[A-Za-z0-9_]{3,30}")) {
                 showError("Tên đăng nhập cần từ 3–30 ký tự gồm chữ, số hoặc dấu gạch dưới.");
@@ -64,15 +67,19 @@ public class RegisterActivity extends Activity {
             error.setVisibility(View.GONE);
             submit.setEnabled(false);
             submit.setText("Đang tạo tài khoản...");
-            AuthRepository.get(this).register(u, p, new AuthRepository.Result<UserApi.Account>() {
+            String emailValue = email.getText().toString().trim();
+            String phoneValue = phone.getText().toString().trim();
+            AuthRepository.get(this).register(u, p,
+                emailValue.isEmpty() ? null : emailValue, phoneValue.isEmpty() ? null : phoneValue,
+                new AuthRepository.Result<UserApi.Account>() {
                 @Override public void success(UserApi.Account account) {
                     if (isFinishing()) return;
                     OnboardingProgress.markPending(RegisterActivity.this, account.user_id);
                     submit.setText("Đang đăng nhập...");
                     AuthRepository.get(RegisterActivity.this).login(u, p,
                         Build.MANUFACTURER + " " + Build.MODEL,
-                        new AuthRepository.Result<UserApi.Tokens>() {
-                            @Override public void success(UserApi.Tokens tokens) {
+                        new AuthRepository.Result<AuthApi.Tokens>() {
+                            @Override public void success(AuthApi.Tokens tokens) {
                                 if (isFinishing()) return;
                                 Intent onboarding = new Intent(RegisterActivity.this,
                                     OnboardingBandActivity.class);
@@ -113,11 +120,13 @@ public class RegisterActivity extends Activity {
         animateIn(back, 0);
         animateIn(findViewById(R.id.registerHeader), 130);
         animateIn(findViewById(R.id.registerUsernameGroup), 260);
-        animateIn(findViewById(R.id.registerPasswordGroup), 390);
-        animateIn(findViewById(R.id.registerConfirmGroup), 520);
-        animateIn(findViewById(R.id.contactNotice), 650);
-        animateIn(submit, 780);
-        animateIn(loginLink, 910);
+        animateIn(findViewById(R.id.registerEmailGroup), 390);
+        animateIn(findViewById(R.id.registerPhoneGroup), 520);
+        animateIn(findViewById(R.id.registerPasswordGroup), 650);
+        animateIn(findViewById(R.id.registerConfirmGroup), 780);
+        animateIn(findViewById(R.id.contactNotice), 910);
+        animateIn(submit, 1040);
+        animateIn(loginLink, 1170);
     }
     private void setupFocus(EditText field) {
         field.setOnFocusChangeListener((v, focused) -> {

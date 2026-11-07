@@ -22,10 +22,10 @@ android {
 
     buildTypes {
         debug {
-            buildConfigField("String", "API_BASE_URL", "\"${providers.gradleProperty("apiBaseUrl").orElse("http://10.0.3.2:8080/api/v1/").get()}\"")
+            buildConfigField("String", "API_BASE_URL", "\"${providers.gradleProperty("apiBaseUrl").orElse("https://doangay.duckdns.org/api/v1/").get()}\"")
         }
         release {
-            buildConfigField("String", "API_BASE_URL", "\"${providers.gradleProperty("apiBaseUrl").orElse("https://example.invalid/api/v1/").get()}\"")
+            buildConfigField("String", "API_BASE_URL", "\"${providers.gradleProperty("apiBaseUrl").orElse("https://doangay.duckdns.org/api/v1/").get()}\"")
             optimization {
                 enable = false
             }

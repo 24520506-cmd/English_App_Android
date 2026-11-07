@@ -24,7 +24,7 @@ import android.widget.Toast;
 import java.util.Calendar;
 import java.util.Locale;
 
-public class ReviewFlowActivity extends Activity {
+public class ReviewFlowActivity extends UserSessionActivity {
     public static final String EXTRA_PAGE = "review_page";
     private static final String STATE_PAGE = "current_page";
     private static final String STATE_WORD = "current_word";

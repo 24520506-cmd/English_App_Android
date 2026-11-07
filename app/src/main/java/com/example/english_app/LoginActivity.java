@@ -16,6 +16,7 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import com.example.english_app.api.AuthApi;
 import com.example.english_app.api.AuthRepository;
 import com.example.english_app.api.UserApi;
 
@@ -99,8 +100,8 @@ public class LoginActivity extends Activity {
             login.setEnabled(false);
             AuthRepository.get(this).login(username.getText().toString().trim(),
                 password.getText().toString(), Build.MANUFACTURER + " " + Build.MODEL,
-                new AuthRepository.Result<UserApi.Tokens>() {
-                    @Override public void success(UserApi.Tokens value) {
+                new AuthRepository.Result<AuthApi.Tokens>() {
+                    @Override public void success(AuthApi.Tokens value) {
                         if (isFinishing()) return;
                         login.setEnabled(true);
                         password.setText("");
@@ -129,8 +130,8 @@ public class LoginActivity extends Activity {
         };
         username.setOnFocusChangeListener(focus);
         password.setOnFocusChangeListener(focus);
-        AuthRepository.get(this).restore(new AuthRepository.Result<UserApi.Tokens>() {
-            @Override public void success(UserApi.Tokens value) {
+        AuthRepository.get(this).restore(new AuthRepository.Result<AuthApi.Tokens>() {
+            @Override public void success(AuthApi.Tokens value) {
                 if (!isFinishing()) openAfterAuthentication(value);
             }
             @Override public void failure(String code, String message) {
@@ -148,7 +149,7 @@ public class LoginActivity extends Activity {
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
-    private void openAfterAuthentication(UserApi.Tokens tokens) {
+    private void openAfterAuthentication(AuthApi.Tokens tokens) {
         String userId = tokens.user == null ? null : tokens.user.user_id;
         if (!OnboardingProgress.isPending(this, userId)) {
             openHome();

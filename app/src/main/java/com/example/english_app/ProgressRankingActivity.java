@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class ProgressRankingActivity extends Activity {
+public class ProgressRankingActivity extends UserSessionActivity {
     public static final String EXTRA_SCREEN = "screen";
     public static final String EXTRA_BACK_TO_PROFILE = "back_to_profile";
     public static final int SCREEN_PROGRESS = 0;

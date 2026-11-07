@@ -12,7 +12,7 @@ import android.widget.TextView;
 import com.example.english_app.api.AuthRepository;
 import com.example.english_app.api.UserApi;
 
-public class OnboardingNameActivity extends Activity {
+public class OnboardingNameActivity extends UserSessionActivity {
  private static final long STEP=130L,DURATION=350L;
  private EditText name;
  private TextView finishButton;

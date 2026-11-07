@@ -10,14 +10,14 @@ Tài liệu này đặc tả **các phần ngoài User API đã cung cấp**. C�
 |---|---|
 | D-01 | Người học ở nhiều mức độ đều được phục vụ; bản đầu không có bài kiểm tra đầu vào bắt buộc. |
 | D-02 | Trước khi vào app, người học **chỉ chọn band nội dung muốn học và các chủ đề gần gũi muốn học trước** cho việc học; có thể nhập thêm tên hiển thị công khai nhưng không chọn kỹ năng/mục tiêu khác. Band này không phải band hiện tại do app đánh giá. |
-| D-03 | Bốn nhóm band nội dung: dưới 4.0; 4.0–5.0; 5.5–6.5; 7.0+. Nội dung thực tế sẽ được Product Owner bổ sung sau. |
+| D-03 | Bảy nhóm band nội dung: `<5.5`; `5.5–6.0`; `6.0–6.5`; `6.5–7.0`; `7.0–7.5`; `7.5–8.0`; `8+`. Các khoảng đóng ở đầu, mở ở cuối; `8+` là từ 8.0 trở lên. Mỗi band là mức nội dung learner chọn, không phải kết quả đánh giá. |
 | D-04 | Một lesson có 5–8 từ/cụm từ mục tiêu, theo thứ tự bắt buộc: học từ → luyện nghe → luyện viết. |
 | D-05 | Kết quả bài nghe được chấm; AI nhận xét ngữ pháp, cách dùng từ và độ tự nhiên của bài viết. Bài viết bắt buộc nhưng nhận xét AI không dùng để tính điểm xếp hạng ở bản đầu. |
 | D-06 | Nộp bài viết thành công là đủ điều kiện hoàn thành lesson, kể cả khi AI chậm/lỗi. Có thể yêu cầu nhận xét lại mà không mất tiến độ. |
 | D-07 | Ôn tập kết hợp từ vựng và nghe, được nhắc ở mốc 1, 3, 7 ngày sau khi hoàn thành lesson; người học có thể mở ôn bất cứ lúc nào. |
 | D-08 | Ranking **xếp theo điểm khối lượng học**: hoàn thành lesson được điểm theo số từ/cụm từ mục tiêu và band lesson, chịu trần 100 điểm lesson/ngày; ba mốc ôn hoàn thành lần đầu được thêm ít điểm. Tỷ lệ nghe lần đầu được hiện cạnh tên để tham khảo, không tính vào điểm hoặc thứ hạng. |
 | D-09 | Admin tự biên soạn, kiểm tra và xuất bản nội dung lesson ở bản đầu; không dùng AI để tạo lesson. |
-| D-10 | Điểm gốc của một lesson = số từ/cụm từ mục tiêu × điểm mỗi từ theo band: dưới 4.0 = 2; 4.0–5.0 = 3; 5.5–6.5 = 4; 7.0+ = 5. Điểm thực cấp chịu trần 100 điểm lesson/ngày theo PRG-R09. |
+| D-10 | Điểm gốc của một lesson = số từ/cụm từ mục tiêu × điểm mỗi từ theo band: `<5.5` = 2; `5.5–6.0` và `6.0–6.5` = 3; `6.5–7.0` và `7.0–7.5` = 4; `7.5–8.0` và `8+` = 5. Điểm thực cấp chịu trần 100 điểm lesson/ngày theo PRG-R09. |
 | D-11 | Mỗi mốc ôn 1, 3, 7 ngày hoàn thành lần đầu được 2 điểm; tổng tối đa 6 điểm ôn cho một lesson. |
 | D-12 | Phần viết yêu cầu người học tự viết câu để vận dụng từ mục tiêu trong tình huống do đề mô tả; không đặt số từ tối thiểu/tối đa cho bài viết. |
 | D-13 | Với mỗi đề viết, admin chọn 2–3 từ/cụm từ từ danh sách 5–8 từ mục tiêu của lesson để người học vận dụng. |
@@ -270,6 +270,18 @@ Nguồn tích hợp: [Google ID token](https://developers.google.com/identity/gs
 
 **Quy tắc:** `ONB-R01` Chọn band/chủ đề không là bài kiểm tra đầu vào và không khóa nội dung mức khác. `ONB-R02` Hồ sơ lựa chọn gắn user ID, không gắn phiên hay liên hệ; cập nhật lựa chọn không đổi chủ bài học theo `ACC-03`. `ONB-R03` BE áp dụng kiểm duyệt `PRG-R07` khi tạo/sửa tên; tên nhập không đạt thì báo lỗi để sửa hoặc bỏ qua, không âm thầm lưu tên đó. Lần đầu đặt tên tự nhập, tại onboarding hoặc Hồ sơ sau khi đã bỏ qua, không tính là đổi tên; tiếp theo tối đa một lần đổi tên thành công trong mỗi khoảng 30 ngày liên tục (720 giờ) theo UTC máy chủ, từ chối sớm kèm `next_change_at`. Đổi tên không tự bỏ trạng thái admin đã ẩn tên khỏi ranking. `CAT-R01` Thứ tự ưu tiên chủ đề không thay quyền truy cập; chủ đề chưa chọn vẫn tìm được.
 
+Band được truyền/lưu bằng enum ổn định; nhãn hiển thị không dùng làm giá trị API:
+
+| Enum | Nhãn | Khoảng giá trị |
+|---|---|---|
+| `<5.5` | `<5.5` | `x < 5.5` |
+| `5.5-6.0` | `5.5–6.0` | `5.5 ≤ x < 6.0` |
+| `6.0-6.5` | `6.0–6.5` | `6.0 ≤ x < 6.5` |
+| `6.5-7.0` | `6.5–7.0` | `6.5 ≤ x < 7.0` |
+| `7.0-7.5` | `7.0–7.5` | `7.0 ≤ x < 7.5` |
+| `7.5-8.0` | `7.5–8.0` | `7.5 ≤ x < 8.0` |
+| `8+` | `8+` | `x ≥ 8.0` |
+
 **Nghiệm thu:** `AC-ONB-01` người học chọn một band và ít nhất một chủ đề rồi vào danh mục; đổi lựa chọn không mất lịch sử. `AC-ONB-02` bỏ qua tên vẫn vào app và nhận biệt danh mặc định; tên hợp lệ lưu và hiện trong Hồ sơ/ranking; tên không đạt bị chặn, không mất lựa chọn band/chủ đề. `AC-ONB-03` lần đặt tên đầu không tính vào hạn mức; đổi tên hợp lệ lần đầu được lưu, yêu cầu tiếp theo trước 720 giờ bị từ chối với `next_change_at`, sau hạn được đổi; đổi tên không hiện lại tên admin đã ẩn. `AC-CAT-01` chủ đề ưu tiên lên đầu, band của lesson hiển thị đúng; các chủ đề khác vẫn truy cập được.
 
 ## 4. Học lesson — Learning API
@@ -390,7 +402,7 @@ Nguồn tích hợp: [Google ID token](https://developers.google.com/identity/gs
 
 | Mã | Quy tắc |
 |---|---|
-| PRG-R01 | Điểm gốc hoàn thành lesson = số từ/cụm từ mục tiêu × điểm mỗi từ của band lesson: dưới 4.0 = 2; 4.0–5.0 = 3; 5.5–6.5 = 4; 7.0+ = 5. Với 5–8 từ, điểm gốc là 10–40; điểm thực cấp chịu PRG-R09. |
+| PRG-R01 | Điểm gốc hoàn thành lesson = số từ/cụm từ mục tiêu × điểm mỗi từ của band lesson: `<5.5` = 2; `5.5–6.0` và `6.0–6.5` = 3; `6.5–7.0` và `7.0–7.5` = 4; `7.5–8.0` và `8+` = 5. Với 5–8 từ, điểm gốc là 10–40; điểm thực cấp chịu PRG-R09. |
 | PRG-R02 | **Lượt ôn hợp lệ đầu tiên của lesson trong ngày hiệu lực của một mốc sẽ hoàn thành mốc đó và cấp 2 điểm, bất kể mở từ đâu. Lượt ôn ngoài cửa sổ hiệu lực hoặc sau khi mốc đã hoàn thành là ôn ngoài mốc và không cấp điểm.** Xác định ngày bằng thời điểm BE chấp nhận bài nộp theo `timezone_snapshot`, không theo lúc bắt đầu lượt. Tối đa 6 điểm ôn/lesson. |
 | PRG-R03 | Điểm được ghi trong sổ điểm theo sự kiện duy nhất `lesson_completed` hoặc `review_milestone_completed`; cùng sự kiện không ghi hai lần kể cả yêu cầu đồng thời. Sửa band/nội dung lesson sau đó không tính lại điểm đã cấp. |
 | PRG-R04 | Kết quả đúng/sai bài nghe và nhận xét viết không làm tăng/giảm điểm học tập. Ranking là tổng điểm hoạt động; không tuyên bố đánh giá năng lực. |
@@ -455,7 +467,7 @@ Nguồn tích hợp: [Google ID token](https://developers.google.com/identity/gs
 |---|---|---|---|
 | RISK-01 | Cao × Cao | Nội dung thủ công sai nghĩa, IPA, phát âm hoặc đáp án. | Xem trước, nghe thử, kiểm tra trường và duyệt bởi admin trước xuất bản. |
 | RISK-02 | Trung bình × Cao | AI nhận xét sai, chậm hoặc bị câu người học điều khiển bằng prompt injection. | Dữ liệu đầu vào không có quyền điều khiển, schema cố định, kiểm tra đầu ra, nhãn AI và xử lý bất đồng bộ. |
-| RISK-03 | Cao × Trung bình | Người học nộp bài rác hoặc chọn band 7.0+ để lấy điểm cao hơn dù chưa nghe hiểu; công thức D-10 không dùng độ chính xác. | Trần 100 điểm lesson/ngày, hiện tỷ lệ nghe lần đầu trên ranking, chặn câu lặp rõ ràng, yêu cầu player phát đến cuối, cảnh báo từ điển và cờ hoàn thành quá nhanh. Các tín hiệu từ client có thể bị giả mạo, không chứng minh nghe thật; nếu lạm dụng lớn, Product Owner xem lại chính sách điểm. |
+| RISK-03 | Cao × Trung bình | Người học nộp bài rác hoặc chọn band cao để nhận hệ số điểm cao hơn dù chưa nghe hiểu; công thức D-10 không dùng độ chính xác. | Trần 100 điểm lesson/ngày, hiện tỷ lệ nghe lần đầu trên ranking, chặn câu lặp rõ ràng, yêu cầu player phát đến cuối, cảnh báo từ điển và cờ hoàn thành quá nhanh. Các tín hiệu từ client có thể bị giả mạo, không chứng minh nghe thật; nếu lạm dụng lớn, Product Owner xem lại chính sách điểm. |
 | RISK-04 | Trung bình × Cao | Nội dung sửa làm sai lượt học/bài nộp cũ. | Lưu phiên bản và snapshot tệp đang tham chiếu. |
 | RISK-05 | Trung bình × Trung bình | Số lượt gọi AI tăng theo số câu, bản sửa và lần thử lại. | Gộp câu bản đầu trong một job, giới hạn lần thử lại/job và 30 lượt gọi/user/ngày UTC; đo chi phí thực tế để điều chỉnh trần. |
 | RISK-06 | Trung bình × Cao | Tên ranking chứa thông tin riêng/nội dung không phù hợp hoặc người bị ẩn tên né kiểm duyệt bằng đổi tên. | Kiểm tra ngay khi lưu, biệt danh dự phòng, giới hạn đổi tên 1 lần/720 giờ, báo cáo và giữ trạng thái admin ẩn cho tới khi admin gỡ. |

@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.example.english_app.api.AuthApi;
 import com.example.english_app.api.AuthRepository;
 import com.example.english_app.api.UserApi;
 import java.util.ArrayList;
@@ -334,8 +335,8 @@ public class StateScreensActivity extends Activity {
         View retry = findViewById(R.id.action0);
         if (retry != null) retry.setEnabled(false);
         AuthRepository.get(this).login(user, secret, Build.MANUFACTURER + " " + Build.MODEL,
-            new AuthRepository.Result<UserApi.Tokens>() {
-                @Override public void success(UserApi.Tokens tokens) {
+            new AuthRepository.Result<AuthApi.Tokens>() {
+                @Override public void success(AuthApi.Tokens tokens) {
                     if (isFinishing()) return;
                     openAfterAuthentication(tokens);
                 }
@@ -377,7 +378,7 @@ public class StateScreensActivity extends Activity {
         startActivity(home);
     }
 
-    private void openAfterAuthentication(UserApi.Tokens tokens) {
+    private void openAfterAuthentication(AuthApi.Tokens tokens) {
         String userId = tokens.user == null ? null : tokens.user.user_id;
         if (!OnboardingProgress.isPending(this, userId)) {
             openHomeClearingTask();

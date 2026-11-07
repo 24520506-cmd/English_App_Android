@@ -1,16 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@drawable/app_night_bg">
-<com.example.english_app.StarfieldView android:layout_width="match_parent" android:layout_height="match_parent"/>
-<LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
-<ScrollView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:fillViewport="true" android:clipToPadding="false"><LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:paddingStart="22dp" android:paddingEnd="22dp" android:paddingTop="48dp" android:paddingBottom="20dp">
-<TextView android:id="@+id/lessonBack" android:layout_width="wrap_content" android:layout_height="48dp" android:gravity="center_vertical" android:text="‹  Quay lại" android:textColor="@color/lv_mint" android:textSize="14sp"/>
-<TextView android:id="@+id/lessonBadge" android:layout_width="match_parent" android:layout_height="48dp" android:layout_marginTop="12dp" android:gravity="center_vertical" android:paddingStart="16dp" android:background="@drawable/lv_panel" android:text="✦  Bài học theo chủ đề" android:textStyle="bold" android:textColor="@color/lv_yellow"/>
-<TextView android:id="@+id/lessonTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:text="Personal Finance &amp; Budgeting — Part 1" android:textStyle="bold" android:textSize="27sp" android:textColor="@color/lv_yellow"/>
-<TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Band 5.5–6.5  •  7 từ/cụm từ" android:textSize="13sp" android:textColor="@color/lv_muted"/>
-<TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="18dp" android:text="Từ vựng  →  Nghe  →  Viết" android:textStyle="bold" android:textColor="@color/lv_mint"/>
-<LinearLayout android:id="@+id/lessonObjective" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:background="@drawable/lv_panel" android:padding="17dp" android:layout_marginTop="24dp"><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Mục tiêu" android:textStyle="bold" android:textSize="17sp" android:textColor="@color/lv_text"/><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Hiểu cách dùng từ trong ngữ cảnh tài chính và vận dụng vào nghe, viết." android:textSize="15sp" android:textColor="@color/lv_muted"/></LinearLayout>
-<LinearLayout android:id="@+id/lessonWords" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:background="@drawable/lv_panel" android:padding="17dp" android:layout_marginTop="12dp"><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="7 từ vựng mục tiêu" android:textStyle="bold" android:textSize="17sp" android:textColor="@color/lv_text"/><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Discretionary spending • Household budget • Financial literacy • Emergency fund • Expenditure • To tighten one's belt • Living paycheck to paycheck" android:lineSpacingExtra="5dp" android:textSize="14sp" android:textColor="@color/lv_muted"/></LinearLayout>
-<TextView android:id="@+id/startLesson" android:layout_width="match_parent" android:layout_height="54dp" android:layout_marginTop="24dp" android:gravity="center" android:text="Bắt đầu bài học  →" android:textStyle="bold" android:textSize="16sp" android:textColor="@color/lv_bg" android:background="@drawable/lv_button"/>
-</LinearLayout></ScrollView>
-<LinearLayout android:layout_width="match_parent" android:layout_height="58dp" android:gravity="center" android:orientation="horizontal" android:background="@color/lv_surface"><TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:gravity="center" android:text="✦ Học" android:textColor="@color/lv_yellow"/><TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:gravity="center" android:text="◇ Ôn tập" android:textColor="@color/lv_muted"/><TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:gravity="center" android:text="↗ Tiến độ" android:textColor="@color/lv_muted"/><TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:gravity="center" android:text="★ Xếp hạng" android:textColor="@color/lv_muted"/><TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:gravity="center" android:text="◉ Hồ sơ" android:textColor="@color/lv_muted"/></LinearLayout>
-</LinearLayout></FrameLayout>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@drawable/app_night_bg">
+    <com.example.english_app.StarfieldView android:layout_width="match_parent"
+        android:layout_height="match_parent" android:importantForAccessibility="no" />
+    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+        android:orientation="vertical">
+        <ScrollView android:layout_width="match_parent" android:layout_height="0dp"
+            android:layout_weight="1" android:fillViewport="true">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="22dp">
+                <TextView android:id="@+id/lessonBack" android:layout_width="wrap_content"
+                    android:layout_height="48dp" android:gravity="center_vertical"
+                    android:text="‹  Quay lại" android:textColor="@color/lv_mint" android:textSize="14sp" />
+                <TextView android:id="@+id/lessonBadge" android:layout_width="match_parent"
+                    android:layout_height="48dp" android:layout_marginTop="12dp"
+                    android:gravity="center_vertical" android:paddingStart="16dp"
+                    android:background="@drawable/lv_panel" android:text="Đang tải bài học…"
+                    android:textStyle="bold" android:textColor="@color/lv_yellow" />
+                <TextView android:id="@+id/lessonTitle" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:layout_marginTop="24dp"
+                    android:text="Bài học" android:textStyle="bold" android:textSize="27sp"
+                    android:textColor="@color/lv_yellow" />
+                <TextView android:id="@+id/lessonMeta" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:layout_marginTop="8dp"
+                    android:textColor="@color/lv_muted" android:textSize="13sp" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp" android:text="NỘI DUNG BÀI HỌC"
+                    android:textStyle="bold" android:textColor="@color/lv_mint" />
+                <TextView android:id="@+id/lessonContent" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:layout_marginTop="10dp"
+                    android:padding="16dp" android:background="@drawable/lv_panel"
+                    android:text="Đang tải nội dung…" android:textColor="@color/lv_text"
+                    android:textSize="14sp" android:lineSpacingExtra="4dp" />
+                <TextView android:id="@+id/lessonAudioStatus" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:layout_marginTop="16dp"
+                    android:textColor="@color/lv_muted" android:textSize="13sp" />
+                <TextView android:id="@+id/btnPlayAudio" android:layout_width="match_parent"
+                    android:layout_height="52dp" android:layout_marginTop="8dp" android:gravity="center"
+                    android:background="@drawable/lv_button" android:text="Phát audio WAV ▶"
+                    android:textStyle="bold" android:textColor="@color/lv_bg" android:visibility="gone" />
+                <TextView android:id="@+id/startLesson" android:layout_width="match_parent"
+                    android:layout_height="54dp" android:layout_marginTop="18dp" android:gravity="center"
+                    android:text="Bắt đầu bài học  →" android:textStyle="bold" android:textSize="16sp"
+                    android:textColor="@color/lv_bg" android:background="@drawable/lv_button" />
+            </LinearLayout>
+        </ScrollView>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="58dp"
+            android:gravity="center" android:orientation="horizontal" android:background="@color/lv_surface">
+            <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:gravity="center" android:text="✦ Học" android:textColor="@color/lv_yellow" />
+            <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:gravity="center" android:text="◇ Ôn tập" android:textColor="@color/lv_muted" />
+            <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:gravity="center" android:text="↗ Tiến độ" android:textColor="@color/lv_muted" />
+            <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:gravity="center" android:text="★ Xếp hạng" android:textColor="@color/lv_muted" />
+            <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:gravity="center" android:text="◉ Hồ sơ" android:textColor="@color/lv_muted" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

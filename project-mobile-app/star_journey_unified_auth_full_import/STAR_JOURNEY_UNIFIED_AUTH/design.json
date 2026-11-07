@@ -204,7 +204,7 @@
         },
         {
           "type": "card",
-          "title": "Dưới 4.0",
+          "title": "<5.5",
           "body": "Nền tảng từ vựng",
           "accent": "indigo",
           "tag": "",
@@ -212,24 +212,48 @@
         },
         {
           "type": "card",
-          "title": "4.0 – 5.0",
-          "body": "Giao tiếp và tình huống thường gặp",
+          "title": "5.5–6.0",
+          "body": "Band 2",
           "accent": "indigo",
           "tag": "",
           "route": null
         },
         {
           "type": "card",
-          "title": "5.5 – 6.5",
-          "body": "Từ vựng và ngữ cảnh nâng cao",
+          "title": "6.0–6.5",
+          "body": "Band 3",
           "accent": "indigo",
           "tag": "",
           "route": null
         },
         {
           "type": "card",
-          "title": "7.0+",
-          "body": "Từ vựng học thuật và diễn đạt tinh tế",
+          "title": "6.5–7.0",
+          "body": "Band 4",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "card",
+          "title": "7.0–7.5",
+          "body": "Band 5",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "card",
+          "title": "7.5–8.0",
+          "body": "Band 6",
+          "accent": "indigo",
+          "tag": "",
+          "route": null
+        },
+        {
+          "type": "card",
+          "title": "8+",
+          "body": "Band 7",
           "accent": "indigo",
           "tag": "",
           "route": null
@@ -412,10 +436,8 @@
         {
           "type": "chips",
           "items": [
-            "Dưới 4.0",
-            "4.0–5.0",
-            "5.5–6.5",
-            "7.0+"
+            "<5.5", "5.5–6.0", "6.0–6.5", "6.5–7.0",
+            "7.0–7.5", "7.5–8.0", "8+"
           ]
         },
         {
@@ -471,7 +493,7 @@
         {
           "type": "chips",
           "items": [
-            "Band 5.5–6.5",
+            "Band 6.0–6.5",
             "Đổi band"
           ]
         },
@@ -515,7 +537,7 @@
         {
           "type": "hero",
           "title": "Personal Finance & Budgeting – Part 1",
-          "subtitle": "Band 5.5–6.5 • 7 từ/cụm từ",
+          "subtitle": "Band 6.0–6.5 • 7 từ/cụm từ",
           "accent": "yellow"
         },
         {
@@ -2246,10 +2268,8 @@
         {
           "type": "chips",
           "items": [
-            "Dưới 4.0",
-            "4.0–5.0",
-            "5.5–6.5",
-            "7.0+"
+            "<5.5", "5.5–6.0", "6.0–6.5", "6.5–7.0",
+            "7.0–7.5", "7.5–8.0", "8+"
           ]
         },
         {
@@ -2571,10 +2591,8 @@
         {
           "type": "chips",
           "items": [
-            "Dưới 4.0",
-            "4.0–5.0",
-            "5.5–6.5",
-            "7.0+"
+            "<5.5", "5.5–6.0", "6.0–6.5", "6.5–7.0",
+            "7.0–7.5", "7.5–8.0", "8+"
           ]
         },
         {
@@ -3027,7 +3045,7 @@
         {
           "type": "card",
           "title": "Bộ lọc",
-          "body": "< 4.0 · 4.0–5.0 · 5.5–6.5 · 7.0+",
+          "body": "<5.5 · 5.5–6.0 · 6.0–6.5 · 6.5–7.0 · 7.0–7.5 · 7.5–8.0 · 8+",
           "route": null,
           "tag": "",
           "accent": "mint"
